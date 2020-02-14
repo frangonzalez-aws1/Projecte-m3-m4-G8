@@ -1,154 +1,162 @@
 <cartas>
 	<carta>
-		<nombre>Pargilana</nombre>
-		<descripcion>Nadie es mejor que yo...</descripcion>
-		<pts_invocacion>5</pts_invocacion>
-		<ataque>3</ataque>
-		<defensa>5</defensa>
-		<tipo>Lanceros</tipo>
-	</carta>
-	<carta>
 		<nombre>Coloclan</nombre>
 		<descripcion>Indeseable bestia...</descripcion>
 		<pts_invocacion>5</pts_invocacion>
-		<ataque>3</ataque>
-		<defensa>5</defensa>
-		<tipo>Infantería</tipo>
+		<ataque>5</ataque>
+		<defensa>2</defensa>
+		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Canirme</nombre>
-		<descripcion>Nadie es mejor que yo...</descripcion>
-		<pts_invocacion>2</pts_invocacion>
-		<ataque>0</ataque>
+		<descripcion>¡Fuera de mi camino!</descripcion>
+		<pts_invocacion>3</pts_invocacion>
+		<ataque>1</ataque>
 		<defensa>2</defensa>
-		<tipo>Infantería</tipo>
+		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Curgo</nombre>
-		<descripcion>En su corazón, esta el amor.</descripcion>
-		<pts_invocacion>4</pts_invocacion>
-		<ataque>4</ataque>
-		<defensa>0</defensa>
-		<tipo>Infantería</tipo>
+		<descripcion>¡Por la marea!</descripcion>
+		<pts_invocacion>5</pts_invocacion>
+		<ataque>3</ataque>
+		<defensa>3</defensa>
+		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Calión</nombre>
-		<descripcion>En su corazón, esta el amor.</descripcion>
-		<pts_invocacion>4</pts_invocacion>
+		<descripcion>Nadie es mejor que yo...</descripcion>
+		<pts_invocacion>5</pts_invocacion>
 		<ataque>4</ataque>
-		<defensa>0</defensa>
-		<tipo>Lanceros</tipo>
+		<defensa>1</defensa>
+		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Bele</nombre>
-		<descripcion>¡Por los dioses que me dieron este poder!</descripcion>
+		<descripcion>¡Por el poder del agua!</descripcion>
 		<pts_invocacion>5</pts_invocacion>
-		<ataque>5</ataque>
-		<defensa>1</defensa>
+		<ataque>4</ataque>
+		<defensa>2</defensa>
 		<tipo>Infantería</tipo>
 	</carta>
 	<carta>
 		<nombre>Histis</nombre>
-		<descripcion>¡Por los dioses que me dieron este poder!</descripcion>
+		<descripcion>¡Por el poder del agua!</descripcion>
 		<pts_invocacion>5</pts_invocacion>
-		<ataque>3</ataque>
-		<defensa>2</defensa>
-		<tipo>Lanceros</tipo>
+		<ataque>4</ataque>
+		<defensa>1</defensa>
+		<tipo>Infantería</tipo>
 	</carta>
 	<carta>
 		<nombre>Marmenta</nombre>
-		<descripcion>Indeseable bestia...</descripcion>
+		<descripcion>En su corazón, esta el amor.</descripcion>
 		<pts_invocacion>5</pts_invocacion>
 		<ataque>5</ataque>
-		<defensa>1</defensa>
+		<defensa>5</defensa>
 		<tipo>Lanceros</tipo>
 	</carta>
 	<carta>
 		<nombre>Conen</nombre>
 		<descripcion>Nadie es mejor que yo...</descripcion>
 		<pts_invocacion>1</pts_invocacion>
-		<ataque>1</ataque>
-		<defensa>0</defensa>
-		<tipo>Lanceros</tipo>
+		<ataque>0</ataque>
+		<defensa>1</defensa>
+		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Voldole</nombre>
-		<descripcion>¡Por la marea!</descripcion>
+		<descripcion>¡Por el poder del agua!</descripcion>
+		<pts_invocacion>5</pts_invocacion>
+		<ataque>3</ataque>
+		<defensa>3</defensa>
+		<tipo>Lanceros</tipo>
+	</carta>
+	<carta>
+		<nombre>Mille</nombre>
+		<descripcion>Nadie es mejor que yo...</descripcion>
+		<pts_invocacion>5</pts_invocacion>
+		<ataque>5</ataque>
+		<defensa>3</defensa>
+		<tipo>Infantería</tipo>
+	</carta>
+	<carta>
+		<nombre>Perofora</nombre>
+		<descripcion>En su corazón, esta el amor.</descripcion>
 		<pts_invocacion>1</pts_invocacion>
 		<ataque>1</ataque>
 		<defensa>0</defensa>
 		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
-		<nombre>Mille</nombre>
+		<nombre>Estabie</nombre>
 		<descripcion>Indeseable bestia...</descripcion>
-		<pts_invocacion>5</pts_invocacion>
-		<ataque>5</ataque>
-		<defensa>2</defensa>
+		<pts_invocacion>1</pts_invocacion>
+		<ataque>1</ataque>
+		<defensa>0</defensa>
 		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
-		<nombre>Perofora</nombre>
-		<descripcion>Nadie es mejor que yo...</descripcion>
-		<pts_invocacion>2</pts_invocacion>
-		<ataque>2</ataque>
-		<defensa>0</defensa>
-		<tipo>Infantería</tipo>
-	</carta>
-	<carta>
-		<nombre>Estabie</nombre>
-		<descripcion>En su corazón, esta el amor.</descripcion>
-		<pts_invocacion>0</pts_invocacion>
-		<ataque>0</ataque>
-		<defensa>0</defensa>
-		<tipo>Infantería</tipo>
-	</carta>
-	<carta>
 		<nombre>Numba</nombre>
-		<descripcion>¡Por el poder del agua!</descripcion>
-		<pts_invocacion>2</pts_invocacion>
-		<ataque>0</ataque>
-		<defensa>2</defensa>
-		<tipo>Infantería</tipo>
+		<descripcion>¡Por los dioses que me dieron este poder!</descripcion>
+		<pts_invocacion>3</pts_invocacion>
+		<ataque>2</ataque>
+		<defensa>1</defensa>
+		<tipo>Lanceros</tipo>
 	</carta>
 	<carta>
 		<nombre>Desego</nombre>
-		<descripcion>¡Por los dioses que me dieron este poder!</descripcion>
-		<pts_invocacion>5</pts_invocacion>
-		<ataque>2</ataque>
-		<defensa>4</defensa>
+		<descripcion>Indeseable bestia...</descripcion>
+		<pts_invocacion>3</pts_invocacion>
+		<ataque>1</ataque>
+		<defensa>2</defensa>
 		<tipo>Infantería</tipo>
 	</carta>
 	<carta>
 		<nombre>Descierta</nombre>
-		<descripcion>¡Por la marea!</descripcion>
+		<descripcion>¡Por el poder del agua!</descripcion>
 		<pts_invocacion>5</pts_invocacion>
-		<ataque>4</ataque>
-		<defensa>5</defensa>
-		<tipo>Caballería</tipo>
+		<ataque>1</ataque>
+		<defensa>4</defensa>
+		<tipo>Infantería</tipo>
 	</carta>
 	<carta>
 		<nombre>Elerochan</nombre>
 		<descripcion>¡Por los dioses que me dieron este poder!</descripcion>
-		<pts_invocacion>5</pts_invocacion>
-		<ataque>0</ataque>
-		<defensa>5</defensa>
+		<pts_invocacion>3</pts_invocacion>
+		<ataque>1</ataque>
+		<defensa>2</defensa>
 		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Recone</nombre>
-		<descripcion>¡Por el poder del agua!</descripcion>
+		<descripcion>Indeseable bestia...</descripcion>
 		<pts_invocacion>5</pts_invocacion>
-		<ataque>1</ataque>
+		<ataque>0</ataque>
 		<defensa>5</defensa>
 		<tipo>Caballería</tipo>
 	</carta>
 	<carta>
 		<nombre>Esmador</nombre>
 		<descripcion>En su corazón, esta el amor.</descripcion>
-		<pts_invocacion>2</pts_invocacion>
-		<ataque>2</ataque>
-		<defensa>0</defensa>
+		<pts_invocacion>5</pts_invocacion>
+		<ataque>1</ataque>
+		<defensa>5</defensa>
+		<tipo>Lanceros</tipo>
+	</carta>
+	<carta>
+		<nombre>Hembad</nombre>
+		<descripcion>¡Por la marea!</descripcion>
+		<pts_invocacion>3</pts_invocacion>
+		<ataque>0</ataque>
+		<defensa>3</defensa>
+		<tipo>Caballería</tipo>
+	</carta>
+	<carta>
+		<nombre>Almen</nombre>
+		<descripcion>¡Fuera de mi camino!</descripcion>
+		<pts_invocacion>5</pts_invocacion>
+		<ataque>5</ataque>
+		<defensa>2</defensa>
 		<tipo>Infantería</tipo>
 	</carta>
 </cartas>

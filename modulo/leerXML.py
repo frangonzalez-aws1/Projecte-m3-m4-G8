@@ -2,9 +2,8 @@ def leerXML(xml):
     import xml.etree.ElementTree as ET
     tree = ET.parse(xml)
     root = tree.getroot()
-    change = 1
+    xmlDic = {}
     for c in root.findall('carta/*'):
-        if change
-        print(c.text)
+        print(list(c.text))
 
 leerXML('../carta.xml')

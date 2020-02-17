@@ -6,5 +6,5 @@
 <!ELEMENT pts_invocacion (#PCDATA)>
 <!ELEMENT ataque (#PCDATA)>
 <!ELEMENT defensa (#PCDATA)>
-<!ELEMENT tipcco (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
 ]>

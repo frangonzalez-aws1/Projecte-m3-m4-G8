@@ -1,4 +1,4 @@
-<cartass>
+<cartas>
 	<carta>
 		<nombre>Coloclan</nombre>
 		<descripcion>Indeseable bestia...</descripcion>
@@ -159,4 +159,4 @@
 		<defensa>2</defensa>
 		<tipo>Infantería</tipo>
 	</carta>
-</cartass>
+</cartas>

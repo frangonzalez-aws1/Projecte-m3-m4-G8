@@ -10,7 +10,7 @@ def menu ():
             except ValueError:
                 print("Debe ser un numero entero")
         if opcion==1:
-            pass
+
         elif opcion==2:
             pass
         elif opcion==3:

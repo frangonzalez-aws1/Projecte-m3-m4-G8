@@ -1,3 +1,3 @@
 def menu ():
     while True:
-        print ()
+        print ('hola')

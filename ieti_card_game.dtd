@@ -1,0 +1,10 @@
+<!DOCTYPE cartas SYSTEM[
+<!ELEMENT cartas (carta)* >
+<!ELEMENT carta (nombre,descripcion,pts_invocacion,ataque,defensa,tipo)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT pts_invocacion (#PCDATA)>
+<!ELEMENT ataque (#PCDATA)>
+<!ELEMENT defensa (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
+]>

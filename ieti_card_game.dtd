@@ -4,7 +4,7 @@
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT descripcion (#PCDATA)>
 <!ELEMENT pts_invocacion (#PCDATA)>
-<!ELEMENT ataque (#PCDATA)>
+<!ELEMENT ataque g (#PCDATA)>
 <!ELEMENT defensa (#PCDATA)>
 <!ELEMENT tipo (#PCDATA)>
 ]>

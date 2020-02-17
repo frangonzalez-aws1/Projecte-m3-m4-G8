@@ -6,7 +6,7 @@ def generadorCartas():
     nombres = ['Pargilana','Coloclan','Canirme','Curgo','Calión','Bele','Histis','Marmenta','Conen','Voldole','Mille','Perofora','Estabie','Numba','Desego','Descierta','Elerochan','Recone','Esmador','Hembad','Almen']
     # Asignamos los tipos de cada carta
     tipos = ['Infantería', 'Caballería', 'Lanceros']
-    # Asignamos las distintas descripciones. Después, cada asignación será aleatoria.
+    # Creamos las distintas descripciones. Después, cada asignación será aleatoria.
     descripciones = ['¡Por la marea!', 'En su corazón, esta el amor.', '¡Por los dioses que me dieron este poder!', 'Nadie es mejor que yo...', 'Indeseable bestia...', '¡Fuera de mi camino!', '¡Por el poder del agua!']
 
     c.writelines('<cartas>\n')

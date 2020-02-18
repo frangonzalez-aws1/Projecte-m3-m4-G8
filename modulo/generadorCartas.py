@@ -9,7 +9,12 @@ def generadorCartas():
     # Creamos las distintas descripciones. Después, cada asignación será aleatoria.
     descripciones = ['¡Por la marea!', 'En su corazón, esta el amor.', '¡Por los dioses que me dieron este poder!', 'Nadie es mejor que yo...', 'Indeseable bestia...', '¡Fuera de mi camino!', '¡Por el poder del agua!']
 
-    c.writelines('<cartas>\n')
+    c.writelines('<playerConfig>\n'
+                 '\t<playerLife>10</playerLife>\n'
+                 '\t<summonPointsPlayer>5</summonPointsPlayer>\n'
+                 '\t<deck>0</deck>\n'
+                 '</playerConfig>\n\n'
+                 '<cards>\n')
     for a in range(1, 21):
         # El número de la lista saldrá aleatoriamente asi asignado el valor de ese número a la descripción y al tipo.
         descripcion = descripciones[random.randint(0, len(descripciones)-1)]
@@ -21,12 +26,12 @@ def generadorCartas():
         invocacion = ataque + defensa
         if invocacion > 5:
             invocacion = 5
-        c.write('\t<carta>\n'
-                '\t\t<nombre>{}</nombre>\n'
-                '\t\t<descripcion>{}</descripcion>\n'
-                '\t\t<pts_invocacion>{}</pts_invocacion>\n'
-                '\t\t<ataque>{}</ataque>\n'
-                '\t\t<defensa>{}</defensa>\n'
-                '\t\t<tipo>{}</tipo>\n'
-                '\t</carta>\n'.format(nombres[a], descripcion, invocacion, ataque, defensa, tipo))
-    c.writelines('</cartas>\n')
+        c.write('\t<card summonPoints="{}" type="{}">\n'
+                '\t\t<name>{}</name>\n'
+                '\t\t<description>{}</description>\n'
+                '\t\t<attack>{}</attack>\n'
+                '\t\t<defense>{}</defense>\n'
+                '\t</card>\n'.format(invocacion, tipo, nombres[a], descripcion, ataque, defensa))
+    c.writelines('</cards>\n')
+
+generadorCartas()

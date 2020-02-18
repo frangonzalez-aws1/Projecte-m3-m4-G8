@@ -4,6 +4,6 @@ def leerXML(xml):
     root = tree.getroot()
     xmlDic = {}
     for c in root.findall('carta/*'):
-        print(list(c.text))
+        xmlDic
 
 leerXML('../carta.xml')

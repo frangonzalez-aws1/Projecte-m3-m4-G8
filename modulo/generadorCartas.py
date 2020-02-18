@@ -26,12 +26,12 @@ def generadorCartas():
         invocacion = ataque + defensa
         if invocacion > 5:
             invocacion = 5
-        c.write('\t<card>\n'
+        c.write('\t<card summonPoints="{}" type="{}">\n'
                 '\t\t<name>{}</name>\n'
                 '\t\t<description>{}</description>\n'
-                '\t\t<summonPoints>{}</summonPoints>\n'
                 '\t\t<attack>{}</attack>\n'
                 '\t\t<defense>{}</defense>\n'
-                '\t\t<type>{}</type>\n'
-                '\t</card>\n'.format(nombres[a], descripcion, invocacion, ataque, defensa, tipo))
+                '\t</card>\n'.format(invocacion, tipo, nombres[a], descripcion, ataque, defensa))
     c.writelines('</cards>\n')
+
+generadorCartas()

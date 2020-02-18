@@ -5,164 +5,124 @@
 </playerConfig>
 
 <cards>
-	<card>
+	<card summonPoints="5" type="Infantería">
 		<name>Coloclan</name>
-		<description>En su corazón, esta el amor.</description>
-		<summonPoints>5</summonPoints>
-		<attack>4</attack>
-		<defense>2</defense>
-		<type>Infantería</type>
+		<description>¡Por la marea!</description>
+		<attack>3</attack>
+		<defense>5</defense>
 	</card>
-	<card>
+	<card summonPoints="5" type="Lanceros">
 		<name>Canirme</name>
-		<description>¡Fuera de mi camino!</description>
-		<summonPoints>1</summonPoints>
-		<attack>1</attack>
-		<defense>0</defense>
-		<type>Caballería</type>
+		<description>¡Por el poder del agua!</description>
+		<attack>5</attack>
+		<defense>2</defense>
 	</card>
-	<card>
+	<card summonPoints="5" type="Infantería">
 		<name>Curgo</name>
-		<description>¡Por el poder del agua!</description>
-		<summonPoints>4</summonPoints>
-		<attack>2</attack>
-		<defense>2</defense>
-		<type>Infantería</type>
+		<description>Indeseable bestia...</description>
+		<attack>4</attack>
+		<defense>3</defense>
 	</card>
-	<card>
+	<card summonPoints="4" type="Caballería">
 		<name>Calión</name>
-		<description>¡Por la marea!</description>
-		<summonPoints>2</summonPoints>
-		<attack>1</attack>
-		<defense>1</defense>
-		<type>Infantería</type>
-	</card>
-	<card>
-		<name>Bele</name>
-		<description>¡Por el poder del agua!</description>
-		<summonPoints>5</summonPoints>
-		<attack>3</attack>
-		<defense>2</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Histis</name>
-		<description>¡Por la marea!</description>
-		<summonPoints>2</summonPoints>
-		<attack>0</attack>
-		<defense>2</defense>
-		<type>Infantería</type>
-	</card>
-	<card>
-		<name>Marmenta</name>
-		<description>¡Fuera de mi camino!</description>
-		<summonPoints>5</summonPoints>
+		<description>Nadie es mejor que yo...</description>
 		<attack>2</attack>
-		<defense>3</defense>
-		<type>Lanceros</type>
+		<defense>2</defense>
 	</card>
-	<card>
-		<name>Conen</name>
-		<description>Indeseable bestia...</description>
-		<summonPoints>4</summonPoints>
-		<attack>4</attack>
-		<defense>0</defense>
-		<type>Infantería</type>
-	</card>
-	<card>
-		<name>Voldole</name>
-		<description>¡Por el poder del agua!</description>
-		<summonPoints>5</summonPoints>
-		<attack>4</attack>
-		<defense>3</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Mille</name>
-		<description>Indeseable bestia...</description>
-		<summonPoints>5</summonPoints>
-		<attack>3</attack>
-		<defense>3</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Perofora</name>
-		<description>En su corazón, esta el amor.</description>
-		<summonPoints>0</summonPoints>
-		<attack>0</attack>
-		<defense>0</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Estabie</name>
-		<description>En su corazón, esta el amor.</description>
-		<summonPoints>1</summonPoints>
-		<attack>0</attack>
-		<defense>1</defense>
-		<type>Caballería</type>
-	</card>
-	<card>
-		<name>Numba</name>
-		<description>¡Por la marea!</description>
-		<summonPoints>3</summonPoints>
-		<attack>0</attack>
-		<defense>3</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Desego</name>
-		<description>¡Fuera de mi camino!</description>
-		<summonPoints>0</summonPoints>
-		<attack>0</attack>
-		<defense>0</defense>
-		<type>Infantería</type>
-	</card>
-	<card>
-		<name>Descierta</name>
+	<card summonPoints="5" type="Lanceros">
+		<name>Bele</name>
 		<description>¡Por los dioses que me dieron este poder!</description>
-		<summonPoints>5</summonPoints>
 		<attack>5</attack>
 		<defense>0</defense>
-		<type>Lanceros</type>
 	</card>
-	<card>
-		<name>Elerochan</name>
+	<card summonPoints="4" type="Caballería">
+		<name>Histis</name>
 		<description>Nadie es mejor que yo...</description>
-		<summonPoints>0</summonPoints>
-		<attack>0</attack>
+		<attack>4</attack>
 		<defense>0</defense>
-		<type>Infantería</type>
 	</card>
-	<card>
+	<card summonPoints="5" type="Infantería">
+		<name>Marmenta</name>
+		<description>¡Por la marea!</description>
+		<attack>4</attack>
+		<defense>4</defense>
+	</card>
+	<card summonPoints="5" type="Caballería">
+		<name>Conen</name>
+		<description>¡Fuera de mi camino!</description>
+		<attack>2</attack>
+		<defense>3</defense>
+	</card>
+	<card summonPoints="5" type="Caballería">
+		<name>Voldole</name>
+		<description>Indeseable bestia...</description>
+		<attack>4</attack>
+		<defense>1</defense>
+	</card>
+	<card summonPoints="5" type="Caballería">
+		<name>Mille</name>
+		<description>Nadie es mejor que yo...</description>
+		<attack>4</attack>
+		<defense>4</defense>
+	</card>
+	<card summonPoints="5" type="Infantería">
+		<name>Perofora</name>
+		<description>Indeseable bestia...</description>
+		<attack>2</attack>
+		<defense>3</defense>
+	</card>
+	<card summonPoints="4" type="Lanceros">
+		<name>Estabie</name>
+		<description>¡Por los dioses que me dieron este poder!</description>
+		<attack>3</attack>
+		<defense>1</defense>
+	</card>
+	<card summonPoints="5" type="Caballería">
+		<name>Numba</name>
+		<description>¡Por la marea!</description>
+		<attack>5</attack>
+		<defense>0</defense>
+	</card>
+	<card summonPoints="2" type="Infantería">
+		<name>Desego</name>
+		<description>¡Fuera de mi camino!</description>
+		<attack>1</attack>
+		<defense>1</defense>
+	</card>
+	<card summonPoints="5" type="Lanceros">
+		<name>Descierta</name>
+		<description>¡Fuera de mi camino!</description>
+		<attack>5</attack>
+		<defense>1</defense>
+	</card>
+	<card summonPoints="1" type="Infantería">
+		<name>Elerochan</name>
+		<description>En su corazón, esta el amor.</description>
+		<attack>1</attack>
+		<defense>0</defense>
+	</card>
+	<card summonPoints="5" type="Lanceros">
 		<name>Recone</name>
-		<description>En su corazón, esta el amor.</description>
-		<summonPoints>5</summonPoints>
-		<attack>1</attack>
+		<description>¡Fuera de mi camino!</description>
+		<attack>3</attack>
 		<defense>5</defense>
-		<type>Infantería</type>
 	</card>
-	<card>
+	<card summonPoints="5" type="Caballería">
 		<name>Esmador</name>
-		<description>¡Por la marea!</description>
-		<summonPoints>5</summonPoints>
-		<attack>1</attack>
-		<defense>4</defense>
-		<type>Infantería</type>
-	</card>
-	<card>
-		<name>Hembad</name>
-		<description>¡Por la marea!</description>
-		<summonPoints>0</summonPoints>
-		<attack>0</attack>
-		<defense>0</defense>
-		<type>Lanceros</type>
-	</card>
-	<card>
-		<name>Almen</name>
 		<description>En su corazón, esta el amor.</description>
-		<summonPoints>4</summonPoints>
-		<attack>0</attack>
-		<defense>4</defense>
-		<type>Infantería</type>
+		<attack>5</attack>
+		<defense>2</defense>
+	</card>
+	<card summonPoints="5" type="Infantería">
+		<name>Hembad</name>
+		<description>¡Por el poder del agua!</description>
+		<attack>2</attack>
+		<defense>3</defense>
+	</card>
+	<card summonPoints="4" type="Lanceros">
+		<name>Almen</name>
+		<description>¡Fuera de mi camino!</description>
+		<attack>3</attack>
+		<defense>1</defense>
 	</card>
 </cards>

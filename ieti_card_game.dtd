@@ -1,10 +1,13 @@
-<!DOCTYPE cartas SYSTEM[
-<!ELEMENT cartas (carta)* >
-<!ELEMENT carta (nombre,descripcion,pts_invocacion,ataque,defensa,tipo)>
-<!ELEMENT nombre (#PCDATA)>
-<!ELEMENT descripcion (#PCDATA)>
-<!ELEMENT pts_invocacion (#PCDATA)>
-<!ELEMENT ataque (#PCDATA)>
-<!ELEMENT defensa (#PCDATA)>
-<!ELEMENT tipo (#PCDATA)>
-]>
+<!ELEMENT PlayerConfig (playerLife, summonPointsPlayer, deck) >
+<!ELEMENT playerLife (#PCDATA)>
+<!ELEMENT summonPointsPlayer (#PCDATA)>
+<!ELEMENT deck (card)+>
+<!ELEMENT card (name,description,attack,defense)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT attack (#PCDATA)>
+<!ELEMENT defense (#PCDATA)>
+<!ATTLIST card summonPoints (0|1|2|3|4|5) #REQUIRED>
+<!ATTLIST card type (infanteria|lanceros|cabelleria) #REQUIRED>
+
+

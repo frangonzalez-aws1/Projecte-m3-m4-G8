@@ -61,8 +61,8 @@
 		<card summonPoints="5" type="chivalry">
 			<name>Mille</name>
 			<description>Indeseable bestia...</description>
-			<attack>3</attack>
-			<defense>3</defense>
+			<attack>0</attack>
+			<defense>5</defense>
 		</card>
 		<card summonPoints="5" type="chivalry">
 			<name>Perofora</name>
@@ -74,13 +74,13 @@
 			<name>Estabie</name>
 			<description>Indeseable bestia...</description>
 			<attack>3</attack>
-			<defense>3</defense>
+			<defense>2</defense>
 		</card>
 		<card summonPoints="5" type="infantry">
 			<name>Numba</name>
 			<description>Nadie es mejor que yo...</description>
-			<attack>4</attack>
-			<defense>4</defense>
+			<attack>3</attack>
+			<defense>1</defense>
 		</card>
 		<card summonPoints="4" type="lancer">
 			<name>Desego</name>

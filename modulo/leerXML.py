@@ -1,12 +1,12 @@
 def leerXML(xml):
-    import xml.etree.ElementTree as ET
+    var = {
+        'Local': {},
+        'Enemigo': {}
 
-    estructura_xml = ET.parse(xml)
+    }
+    print(requests.get(
+        'https://www.matchbook.com/edge/rest/events?language=en&currency=GBP&price-mode=aggregated&exchange-type=back-lay&odds-type=DECIMAL&price-depth=3&price-order=price%20desc&include-event-participant
+    print(requests.get(
+        'https://www.matchbook.com/edge/rest/events?language=en&currency=GBP&price-mode=aggregated&exchange-type=back-lay&odds-type=DECIMAL&price-depth=3&price-order=price%20desc&include-event-participant
 
-    # Obtiene el elemento raíz:
-    raiz = estructura_xml.getroot()
-
-    for elemento_hijo in raiz:
-        print(elemento_hijo)
-
-leerXML('../carta.xml')
+leerXML('xml')﻿

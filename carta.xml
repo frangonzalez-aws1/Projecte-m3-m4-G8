@@ -4,121 +4,121 @@
 	<playerLife>10</playerLife>
 	<summonPointsPlayer>5</summonPointsPlayer>
 	<deck>
-		<card summonPoints="5" type="Caballeria">
+		<card summonPoints="5" type="chivalry">
 			<name>Coloclan</name>
 			<description>En su corazón, esta el amor.</description>
 			<attack>2</attack>
 			<defense>3</defense>
 		</card>
-		<card summonPoints="5" type="Lanceros">
+		<card summonPoints="5" type="lancer">
 			<name>Canirme</name>
 			<description>En su corazón, esta el amor.</description>
 			<attack>0</attack>
 			<defense>5</defense>
 		</card>
-		<card summonPoints="3" type="Lanceros">
+		<card summonPoints="3" type="lancer">
 			<name>Curgo</name>
 			<description>¡Por el poder del agua!</description>
 			<attack>1</attack>
 			<defense>2</defense>
 		</card>
-		<card summonPoints="4" type="Infanteria">
+		<card summonPoints="4" type="infantry">
 			<name>Calión</name>
 			<description>En su corazón, esta el amor.</description>
 			<attack>4</attack>
 			<defense>0</defense>
 		</card>
-		<card summonPoints="2" type="Caballeria">
+		<card summonPoints="2" type="chivalry">
 			<name>Bele</name>
 			<description>En su corazón, esta el amor.</description>
 			<attack>1</attack>
 			<defense>1</defense>
 		</card>
-		<card summonPoints="5" type="Lanceros">
+		<card summonPoints="5" type="lancer">
 			<name>Histis</name>
 			<description>¡Fuera de mi camino!</description>
 			<attack>2</attack>
 			<defense>3</defense>
 		</card>
-		<card summonPoints="5" type="Lanceros">
+		<card summonPoints="5" type="lancer">
 			<name>Marmenta</name>
 			<description>¡Por la marea!</description>
 			<attack>1</attack>
 			<defense>4</defense>
 		</card>
-		<card summonPoints="2" type="Infanteria">
+		<card summonPoints="2" type="infantry">
 			<name>Conen</name>
 			<description>Nadie es mejor que yo...</description>
 			<attack>0</attack>
 			<defense>2</defense>
 		</card>
-		<card summonPoints="5" type="Lanceros">
+		<card summonPoints="5" type="lancer">
 			<name>Voldole</name>
 			<description>Nadie es mejor que yo...</description>
 			<attack>1</attack>
 			<defense>4</defense>
 		</card>
-		<card summonPoints="5" type="Caballeria">
+		<card summonPoints="5" type="chivalry">
 			<name>Mille</name>
 			<description>Indeseable bestia...</description>
 			<attack>3</attack>
 			<defense>3</defense>
 		</card>
-		<card summonPoints="5" type="Caballeria">
+		<card summonPoints="5" type="chivalry">
 			<name>Perofora</name>
 			<description>Indeseable bestia...</description>
 			<attack>2</attack>
 			<defense>5</defense>
 		</card>
-		<card summonPoints="5" type="Caballeria">
+		<card summonPoints="5" type="chivalry">
 			<name>Estabie</name>
 			<description>Indeseable bestia...</description>
 			<attack>3</attack>
 			<defense>3</defense>
 		</card>
-		<card summonPoints="5" type="Infanteria">
+		<card summonPoints="5" type="infantry">
 			<name>Numba</name>
 			<description>Nadie es mejor que yo...</description>
 			<attack>4</attack>
 			<defense>4</defense>
 		</card>
-		<card summonPoints="4" type="Lanceros">
+		<card summonPoints="4" type="lancer">
 			<name>Desego</name>
 			<description>En su corazón, esta el amor.</description>
 			<attack>3</attack>
 			<defense>1</defense>
 		</card>
-		<card summonPoints="1" type="Lanceros">
+		<card summonPoints="1" type="lancer">
 			<name>Descierta</name>
 			<description>¡Fuera de mi camino!</description>
 			<attack>1</attack>
 			<defense>0</defense>
 		</card>
-		<card summonPoints="5" type="Caballeria">
+		<card summonPoints="5" type="chivalry">
 			<name>Elerochan</name>
 			<description>¡Por el poder del agua!</description>
 			<attack>4</attack>
 			<defense>1</defense>
 		</card>
-		<card summonPoints="3" type="Lanceros">
+		<card summonPoints="3" type="lancer">
 			<name>Recone</name>
 			<description>¡Fuera de mi camino!</description>
 			<attack>2</attack>
 			<defense>1</defense>
 		</card>
-		<card summonPoints="4" type="Caballeria">
+		<card summonPoints="4" type="chivalry">
 			<name>Esmador</name>
 			<description>¡Por la marea!</description>
 			<attack>2</attack>
 			<defense>2</defense>
 		</card>
-		<card summonPoints="2" type="Infanteria">
+		<card summonPoints="2" type="infantry">
 			<name>Hembad</name>
 			<description>¡Por el poder del agua!</description>
 			<attack>0</attack>
 			<defense>2</defense>
 		</card>
-		<card summonPoints="3" type="Caballeria">
+		<card summonPoints="3" type="chivalry">
 			<name>Almen</name>
 			<description>¡Fuera de mi camino!</description>
 			<attack>0</attack>

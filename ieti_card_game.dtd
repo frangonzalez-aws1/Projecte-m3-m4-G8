@@ -8,6 +8,6 @@
 <!ELEMENT attack (#PCDATA)>
 <!ELEMENT defense (#PCDATA)>
 <!ATTLIST card summonPoints (0|1|2|3|4|5) #REQUIRED>
-<!ATTLIST card type (infanteria|lanceros|cabelleria) #REQUIRED>
+<!ATTLIST card type (Infanteria|Lanceros|Caballeria) #REQUIRED>
 
 

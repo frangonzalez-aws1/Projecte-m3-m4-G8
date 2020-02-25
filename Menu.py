@@ -4,15 +4,19 @@ def c(alioene):
     if alioene == "aliado":
         try:
             archivoa = ET.parse("myBaraja.xml")
+            print("cartas cargadas")
             return archivoa
         except FileNotFoundError:
-            print("No se ha podido leer el fichero")
+            print("Error al cargar las cartas")
+            return False
     else:
         try:
             archivoe = ET.parse("Enemigo.xml")
+            print("Cartas enemigas cargadas")
             return archivoe
         except FileNotFoundError:
-            print("No se ha podido leer el fichero")
+            print("Error al cargar las cartas")
+            return False
 ##menu mazos creados (jvsb)
 def jugar():
     while True:
@@ -164,9 +168,8 @@ def menu():
         comp()
         ##cargamos cartas aliadas y ponemos "cc" en True(Cargar cartas aliadas)
         if opcion == 1:
-            c("aliado")
-            print("cartas cargadas")
-            cc=True
+            if c("aliado") is not False:
+                cc=True
             ##comprovamos que "cc" este en True (cargar cartas aliadas) y mostramos la siguiente parte del menu
             if cc==True and cec ==False:
                 while True:
@@ -177,10 +180,9 @@ def menu():
                         print("Cartas Cargadas")
                     ##Cargamos las cartas enemigas, ponemos "cec" en True(cargar enemigas cargadas) y hacemos un break para mostrar el siguiente menu
                     elif opcion == 2:
-                        c("enemigo")
-                        print("Cartas enemigas cargadas")
-                        cec=True
-                        break
+                        if c("enemigo") is not False:
+                            cec=True
+                            break
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==3:
                         print("mazo creado")
@@ -308,7 +310,6 @@ def menu():
                     comp()
                     if opcion == 1:
                         c("aliado")
-                        print("Cartas Cargadas")
                     elif opcion == 2:
                         c("enemigo")
                         print("Cartas enemigas cargadas")
@@ -411,21 +412,18 @@ def menu():
             elif cc==False and cec==True:
                 print("Falta crear el mazo aliado")
         elif opcion == 2:
-            c("enemigo")
-            print('Cartas enemigas cargadas')
-            cec= True
+            if c("enemigo")is not False:
+                cec= True
             if cec == True and cc == False:
                 while True:
                     menucec()
                     comp()
                     if opcion == 1:
-                        c("aliado")
-                        print('Cartas aliadas cargadas')
-                        cc = True
-                        break
+                        if c("aliado") is not False:
+                            cc = True
+                            break
                     elif opcion == 2:
                         c("enemigo")
-                        print('Cartas enemigas cargadas')
                     elif opcion == 3:
                         print('Mazo enemigo creado')
                         mec = True
@@ -486,17 +484,14 @@ def menu():
                                 mc = False
                                 mec = False
                                 break
-
                 if cc == True and cec == True:
                     while True:
                         menucc()
                         comp()
                         if opcion == 1:
                             c("aliado")
-                            print('Cartas aliadas cargadas')
                         elif opcion == 2:
                             c("enemigo")
-                            print('Cartas enemigas cargadas')
                         elif opcion == 3:
                             print('Mazo aliado creado')
                             mc = True

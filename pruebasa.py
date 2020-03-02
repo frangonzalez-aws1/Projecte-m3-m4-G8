@@ -10,10 +10,11 @@ def crearMazo(tipo, archivo):
             print(child.tag, child.value)
     elif tipo is 'defend':
         for child in archivo.findall('deck/card/'):
-            for child2 in archivo.findall('deck/card/'+child):
+            print(child.text)
                 if int(child2.text) == 5:
                     dic[cont]=('deck/card/'+child)
             cont+=1
+            print(cont)
         print(dic)
     elif tipo is 'random':
         print('Random:', archivo)

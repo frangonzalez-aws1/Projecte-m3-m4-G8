@@ -1,12 +1,12 @@
 import xml.etree.ElementTree as ET
-##cargamos el cml con las cartas
+##cargamos el xml con las cartas
 def c(alioene):
     if alioene == "aliado":
         try:
             archivoa = ET.parse("myBaraja.xml")
             return archivoa
         except FileNotFoundError:
-            print("No se ha podido leer el fichero")
+            return False
     else:
         try:
             archivoe = ET.parse("Enemigo.xml")
@@ -164,9 +164,9 @@ def menu():
         comp()
         ##cargamos cartas aliadas y ponemos "cc" en True(Cargar cartas aliadas)
         if opcion == 1:
-            c("aliado")
-            print("cartas cargadas")
-            cc=True
+            if c('aliado') is not False:
+                print('Cartas cargadas')
+                cc=True
             ##comprovamos que "cc" este en True (cargar cartas aliadas) y mostramos la siguiente parte del menu
             if cc==True and cec ==False:
                 while True:
@@ -308,7 +308,6 @@ def menu():
                     comp()
                     if opcion == 1:
                         c("aliado")
-                        print("Cartas Cargadas")
                     elif opcion == 2:
                         c("enemigo")
                         print("Cartas enemigas cargadas")

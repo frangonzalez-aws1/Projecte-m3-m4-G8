@@ -5,15 +5,16 @@ def crearMazo(tipo, archivo):
     cont=0
     c=10
     dic={1:{}, 2:{}, 3:{}, 4:{}, 5:{}, 6:{}, 7:{}, 8:{}, 9:{}, 10:{}}
+
+    for child in archivo.findall('deck/card/'):
+        for child2 in archivo.findall('deck/card/' + child):
+            if int(child2.text) == 5:
+                dic[cont] = ('deck/card/' + child)
+        cont += 1
+
     if tipo is 'attack':
-       for child in archivo.findall('deck/'):
-            print(child.tag, child.value)
+       print(dic)
     elif tipo is 'defend':
-        for child in archivo.findall('deck/card/'):
-            for child2 in archivo.findall('deck/card/'+child):
-                if int(child2.text) == 5:
-                    dic[cont]=('deck/card/'+child)
-            cont+=1
         print(dic)
     elif tipo is 'random':
         print('Random:', archivo)

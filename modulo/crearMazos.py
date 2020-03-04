@@ -14,6 +14,7 @@ def crearMazo(tipo, archivo):
         cnt3 = 0
         cnt = 1
         while cnt3 < 10:
+            # ERROR: Si en la carta pongo más de 20 cartas solo me contara las 20 y no todas las que ponga.
             ran = str(random.randint(1, 21))
             for child in archivo.findall('deck/card/['+ran+']'):
                 trobat = 0

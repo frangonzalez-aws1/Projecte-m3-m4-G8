@@ -1,4 +1,5 @@
 def crearMazo(tipo, archivo):
+    import random
     types = ['attack', 'defend', 'random', 'balanced']
     # Mostramos un error si el atributo <tipo> no es el deseado con la lista creada en la anterior linea.
     assert tipo in types, 'El atributo insertado no es el correcto.'

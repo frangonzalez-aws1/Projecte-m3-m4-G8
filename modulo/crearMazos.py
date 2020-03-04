@@ -1,45 +1,42 @@
 def crearMazo(tipo, archivo):
+    import random, xml.etree.ElementTree as ET
     types = ['attack', 'defend', 'random', 'balanced']
     # Mostramos un error si el atributo <tipo> no es el deseado con la lista creada en la anterior linea.
     assert tipo in types, 'El atributo insertado no es el correcto.'
-    dic = {1: {}, 2: {}, 3: {}, 4: {}, 5: {}, 6: {}, 7: {}, 8: {}, 9: {}, 10: {}}
 
-    cnt = 1
-    for child in archivo.findall('deck/card/'):
-        if cnt == 11:
-            break
-        if child.tag == 'name':
-            dic[cnt]['name'] = child.text
-
-        elif child.tag == 'description':
-            dic[cnt]['description'] = child.text
-
-        elif child.tag == 'attack':
-            dic[cnt]['attack'] = child.text
-
-        elif child.tag == 'defense':
-            dic[cnt]['defense'] = child.text
-            cnt += 1
-
-    cnt2 = 1
-    for child in archivo.findall('deck/card'):
-        if cnt2 == 11:
-            break
-        dic[cnt2]['summonPoints'] = child.attrib['summonPoints']
-        dic[cnt2]['type'] = child.attrib['type']
-        cnt2 += 1
+    dic = {}
 
     if tipo is 'attack':
-       print(dic)
+        print('ATTACK:', archivo)
     elif tipo is 'defend':
-        print(dic)
+        print('DEFENSE:', archivo)
     elif tipo is 'random':
-        print('Random:', archivo)
+        cnt3 = 0
+        cnt = 1
+        while cnt3 < 10:
+            # ERROR: Si en la carta pongo más de 20 cartas solo me contara las 20 y no todas las que ponga.
+            ran = str(random.randint(1, len(archivo.findall('deck/card'))+1))
+            for child in archivo.findall('deck/card/['+ran+']'):
+                trobat = 0
+                d = {}
+                for child2 in child:
+                    for i in dic.values():
+                        if child2.text == i['name']:
+                            trobat = 1
+                            break
+                    d[child2.tag] = child2.text
+                if trobat == 0:
+                    dic[cnt] = d
+                    cnt += 1
+
+            cnt3 += 1
     elif tipo is 'balanced':
-        print('Balanced:', archivo)
+        print('BALANCED:', archivo)
+
+    print(dic)
 
 import xml.etree.ElementTree as ET
 archivoa = ET.parse('../myBaraja.xml')
 archivoa = archivoa.getroot()
 
-crearMazo('attack', archivoa)
+crearMazo('random', archivoa)

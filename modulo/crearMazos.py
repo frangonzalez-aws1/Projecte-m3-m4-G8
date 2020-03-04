@@ -15,7 +15,7 @@ def crearMazo(tipo, archivo):
         cnt = 1
         while cnt3 < 10:
             # ERROR: Si en la carta pongo más de 20 cartas solo me contara las 20 y no todas las que ponga.
-            ran = str(random.randint(1, 21))
+            ran = str(random.randint(1, len(archivo.findall('deck/card'))+1))
             for child in archivo.findall('deck/card/['+ran+']'):
                 trobat = 0
                 d = {}
@@ -30,14 +30,13 @@ def crearMazo(tipo, archivo):
                     cnt += 1
 
             cnt3 += 1
-        print(dic)
     elif tipo is 'balanced':
         print('BALANCED:', archivo)
 
     print(dic)
 
 import xml.etree.ElementTree as ET
-archivoa = ET.parse('./myBaraja.xml')
+archivoa = ET.parse('../myBaraja.xml')
 archivoa = archivoa.getroot()
 
 crearMazo('random', archivoa)

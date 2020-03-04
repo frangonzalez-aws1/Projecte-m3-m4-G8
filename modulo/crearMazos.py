@@ -62,9 +62,8 @@ def crearMazo(tipo, archivo):
 
     # RANDOM
     elif tipo is types[2]:
-        cnt3 = 0
         cnt = 1
-        while cnt3 < 11:
+        while cnt < 11:
             # ERROR: Si en la carta pongo más de 20 cartas solo me contara las 20 y no todas las que ponga.
             ran = str(random.randint(1, len(archivo.findall('deck/card')) + 1))
             for child in archivo.findall('deck/card[' + ran + ']'):
@@ -79,8 +78,6 @@ def crearMazo(tipo, archivo):
                 if trobat == 0:
                     dic[cnt] = d
                     cnt += 1
-
-            cnt3 += 1
 
     # BALANCED
     elif tipo is types[3]:

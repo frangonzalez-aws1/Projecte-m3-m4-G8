@@ -1,16 +1,19 @@
 import xml.etree.ElementTree as ET
+from modulo.crearMazos import crearMazo
 ##cargamos el cml con las cartas
 def c(alioene):
     if alioene == "aliado":
         try:
             archivoa = ET.parse("myBaraja.xml")
-            return archivoa
+            print("Se ha cargado correctamente el archivo aliado")
+            return True
         except FileNotFoundError:
             print("No se ha podido leer el fichero")
     else:
         try:
             archivoe = ET.parse("Enemigo.xml")
-            return archivoe
+            print("Se ha cargado correctamente el archivo enemigo")
+            return True
         except FileNotFoundError:
             print("No se ha podido leer el fichero")
 ##menu mazos creados (jvsb)
@@ -20,26 +23,48 @@ def jugar():
         comp()
         if opcion == 1:
             c("aliado")
-            print("Cartas Cargadas")
         elif opcion == 2:
             c("enemigo")
-            print("Cartas enemigas cargadas")
         elif opcion == 3:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("random", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 4:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("attack", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 5:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("defend", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 6:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("balanced", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 7:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("random", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 8:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("attack", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 9:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("defend", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 10:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("balanced", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 11:
             print("Pratida terminada")
             break
@@ -55,26 +80,48 @@ def jugarpvsp():
         comp()
         if opcion == 1:
             c("aliado")
-            print("Cartas Cargadas")
         elif opcion == 2:
             c("enemigo")
-            print("Cartas enemigas cargadas")
         elif opcion == 3:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("random", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 4:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("attack", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 5:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("defend", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 6:
-            print("mazo creado")
+            archivoa = ET.parse("myBaraja.xml")
+            mazoLocal = crearMazo("balanced", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo aliado creado")
         elif opcion == 7:
-            print("mazo creado")
+            archivoa = ET.parse("Enemigo.xml")
+            mazoLocal = crearMazo("random", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 8:
-            print("mazo creado")
+            archivoa = ET.parse("Enemigo.xml")
+            mazoLocal = crearMazo("attack", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 9:
-            print("mazo creado")
+            archivoa = ET.parse("Enemigo.xml")
+            mazoLocal = crearMazo("defend", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 10:
-            print("mazo creado")
+            archivoa = ET.parse("Enemigo.xml")
+            mazoLocal = crearMazo("balanced", archivoa.getroot())
+            print(mazoLocal)
+            print("Mazo enemigo creado")
         elif opcion == 11:
             print("Pratida terminada")
             break
@@ -164,9 +211,10 @@ def menu():
         comp()
         ##cargamos cartas aliadas y ponemos "cc" en True(Cargar cartas aliadas)
         if opcion == 1:
-            c("aliado")
-            print("cartas cargadas")
-            cc=True
+            if c("aliado") == True:
+                cc=True
+            else:
+                print("Mazo no cargado")
             ##comprovamos que "cc" este en True (cargar cartas aliadas) y mostramos la siguiente parte del menu
             if cc==True and cec ==False:
                 while True:
@@ -174,19 +222,22 @@ def menu():
                     comp()
                     if opcion==1:
                         c("aliado")
-                        print("Cartas Cargadas")
                     ##Cargamos las cartas enemigas, ponemos "cec" en True(cargar enemigas cargadas) y hacemos un break para mostrar el siguiente menu
                     elif opcion == 2:
-                        c("enemigo")
-                        print("Cartas enemigas cargadas")
-                        cec=True
-                        break
+                        if c("enemigo") == True:
+                            cec=True
+                            break
+                        else:
+                            print("Mazo no cargado")
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==3:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal= crearMazo("random",archivoa.getroot())
+                        print(mazoLocal)
                         mc=True
                         ##En caso de que solo tengamos el mazo aliado creado nos saltara un aviso de que falta crear el mazo enemigo
                         if mc==True and mec==False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mc==True and mec==True:
@@ -198,10 +249,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==4:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("attack", archivoa.getroot())
+                        print(mazoLocal)
                         mc=True
                         ##En caso de que solo tengamos el mazo aliado creado nos saltara un aviso de que falta crear el mazo enemigo
                         if mc==True and mec==False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mc==True and mec==True:
@@ -213,10 +267,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==5:
-                        print("mazo creado")
-                        mc=True
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("defend", archivoa.getroot())
+                        print(mazoLocal)
+                        mc = True
                         ##En caso de que solo tengamos el mazo aliado creado nos saltara un aviso de que falta crear el mazo enemigo
                         if mc==True and mec==False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mc==True and mec==True:
@@ -228,10 +285,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==6:
-                        print("mazo creado")
-                        mc=True
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("balanced", archivoa.getroot())
+                        print(mazoLocal)
+                        mc = True
                         ##En caso de que solo tengamos el mazo aliado creado nos saltara un aviso de que falta crear el mazo enemigo
                         if mc==True and mec==False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mc==True and mec==True:
@@ -243,10 +303,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mec" en true
                     elif opcion == 7:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoEnemigo = crearMazo("random", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         ##En caso de que solo tengamos el mazo enemigo creado nos saltara un aviso de que falta crear el mazo aliado
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mec == True and mc == True:
@@ -258,10 +321,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mec" en true
                     elif opcion == 8:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoEnemigo = crearMazo("attack", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         ##En caso de que solo tengamos el mazo enemigo creado nos saltara un aviso de que falta crear el mazo aliado
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mec == True and mc == True:
@@ -273,10 +339,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mec" en true
                     elif opcion == 9:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoEnemigo = crearMazo("defend", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         ##En caso de que solo tengamos el mazo enemigo creado nos saltara un aviso de que falta crear el mazo aliado
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mec == True and mc == True:
@@ -288,10 +357,13 @@ def menu():
                             break
                     ##Creamos el mazo aliado y ponemos "mec" en true
                     elif opcion == 10:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoEnemigo = crearMazo("balanced", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         ##En caso de que solo tengamos el mazo enemigo creado nos saltara un aviso de que falta crear el mazo aliado
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         ##en caso de tener los 2 mazos creados nos mostrara el siguiente menu
                         elif mec == True and mc == True:
@@ -308,14 +380,15 @@ def menu():
                     comp()
                     if opcion == 1:
                         c("aliado")
-                        print("Cartas Cargadas")
                     elif opcion == 2:
                         c("enemigo")
-                        print("Cartas enemigas cargadas")
                     elif opcion == 3:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("random", archivoa.getroot())
+                        print(mazoLocal)
                         mc = True
                         if mc == True and mec == False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         elif mc == True and mec == True:
                             jugarpvsp()
@@ -325,9 +398,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 4:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("attack", archivoa.getroot())
+                        print(mazoLocal)
                         mc = True
                         if mc == True and mec == False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         elif mc == True and mec == True:
                             jugarpvsp()
@@ -337,9 +413,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 5:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("defend", archivoa.getroot())
+                        print(mazoLocal)
                         mc = True
                         if mc == True and mec == False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         elif mc == True and mec == True:
                             jugarpvsp()
@@ -349,9 +428,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 6:
-                        print("mazo creado")
+                        archivoa = ET.parse("myBaraja.xml")
+                        mazoLocal = crearMazo("balanced", archivoa.getroot())
+                        print(mazoLocal)
                         mc = True
                         if mc == True and mec == False:
+                            print("Mazo aliado creado")
                             print("Falta crear el mazo enemigo")
                         elif mc == True and mec == True:
                             jugarpvsp()
@@ -361,9 +443,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 7:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("Enemigo.xml")
+                        mazoEnemigo = crearMazo("random", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         elif mec == True and mc == True:
                             jugarpvsp()
@@ -373,9 +458,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 8:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("Enemigo.xml")
+                        mazoEnemigo = crearMazo("attack", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         elif mec == True and mc == True:
                             jugarpvsp()
@@ -385,9 +473,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 9:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("Enemigo.xml")
+                        mazoEnemigo = crearMazo("defend", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         elif mec == True and mc == True:
                             jugarpvsp()
@@ -397,9 +488,12 @@ def menu():
                             mec = False
                             break
                     elif opcion == 10:
-                        print("mazo enemigo creado")
+                        archivoa = ET.parse("Enemigo.xml")
+                        mazoEnemigo = crearMazo("balanced", archivoa.getroot())
+                        print(mazoEnemigo)
                         mec = True
                         if mec == True and mc == False:
+                            print("Mazo enemigo creado")
                             print("Falta crear el mazo aliado")
                         elif mec == True and mc == True:
                             jugarpvsp()
@@ -411,29 +505,26 @@ def menu():
             elif cc==False and cec==True:
                 print("Falta crear el mazo aliado")
         elif opcion == 2:
-            c("enemigo")
-            print('Cartas enemigas cargadas')
-            cec= True
+            if c("enemigo")== True:
+                cec=True
             if cec == True and cc == False:
                 while True:
                     menucec()
                     comp()
                     if opcion == 1:
-                        c("aliado")
-                        print('Cartas aliadas cargadas')
-                        cc = True
-                        break
+                        if c("aliado") == True:
+                            cc = True
+                            break
                     elif opcion == 2:
                         c("enemigo")
-                        print('Cartas enemigas cargadas')
                     elif opcion == 3:
-                        print('Mazo enemigo creado')
+                        archivoa = ET.parse("Enemigo.xml")
+                        mazoLocal = crearMazo("random", archivoa.getroot())
+                        print(mazoLocal)
                         mec = True
                         if mec == True and mc == False:
-                            if mc==False and cc==False:
-                                    print('Falta cargar y crear el mazo aliado')
-                            elif mc ==False and cc==True:
-                                print("Falta crear el mazo enemigo")
+                            print("Mazo enemigo creado")
+                            print("Falta cargar las cartas aliadas y crear el mazo")
                         elif mc == True and mec == True:
                             jugar()
                             cc = False
@@ -442,13 +533,13 @@ def menu():
                             mec = False
                             break
                     elif opcion == 4:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoLocal = crearMazo("attack", archivoa.getroot())
+                            print(mazoLocal)
                             mec = True
                             if mec == True and mc == False:
-                                if mc == False and cc == False:
-                                    print('Falta cargar y crear el mazo aliado')
-                                elif mc == False and cc == True:
-                                    print("Falta crear el mazo enemigo")
+                                print("Mazo enemigo creado")
+                                print("Falta cargar las cartas aliadas y crear el mazo")
                             elif mc == True and mec == True:
                                 jugar()
                                 cc = False
@@ -457,14 +548,14 @@ def menu():
                                 mec = False
                                 break
                     elif opcion == 5:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoLocal = crearMazo("defend", archivoa.getroot())
+                            print(mazoLocal)
                             mec = True
                             if mec == True and mc == False:
-                                if mc == False and cc == False:
-                                    print('Falta cargar y crear el mazo aliado')
-                                elif mc == False and cc == True:
-                                    print("Falta crear el mazo enemigo")
-                            elif mc == True and mec == True:
+                                print("Mazo enemigo creado")
+                                print("Falta cargar las cartas aliadas y crear el mazo")
+                            elif mec == True and mc == True:
                                 jugar()
                                 cc = False
                                 cec = False
@@ -472,13 +563,13 @@ def menu():
                                 mec = False
                                 break
                     elif opcion == 6:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoLocal = crearMazo("balanced", archivoa.getroot())
+                            print(mazoLocal)
                             mec = True
                             if mec == True and mc == False:
-                                if mc == False and cc == False:
-                                    print('Falta cargar y crear el mazo aliado')
-                                elif mc == False and cc == True:
-                                    print("Falta crear el mazo enemigo")
+                                print("Mazo enemigo creado")
+                                print("Falta cargar las cartas aliadas y crear el mazo")
                             elif mc == True and mec == True:
                                 jugar()
                                 cc = False
@@ -493,15 +584,16 @@ def menu():
                         comp()
                         if opcion == 1:
                             c("aliado")
-                            print('Cartas aliadas cargadas')
                         elif opcion == 2:
                             c("enemigo")
-                            print('Cartas enemigas cargadas')
                         elif opcion == 3:
-                            print('Mazo aliado creado')
+                            archivoa = ET.parse("myBaraja.xml")
+                            mazoLocal = crearMazo("defend", archivoa.getroot())
+                            print(mazoLocal)
                             mc = True
                             if mc == True and mec == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo aliado creado")
+                                print("Falta crear el mazo enemigo")
                             elif mc == True and mec == True:
                                 jugarpvsp()
                                 cc = False
@@ -510,10 +602,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 4:
-                            print('Mazo aliado creado')
+                            archivoa = ET.parse("myBaraja.xml")
+                            mazoLocal = crearMazo("attack", archivoa.getroot())
+                            print(mazoLocal)
                             mc = True
                             if mc == True and mec == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo aliado creado")
+                                print("Falta crear el mazo enemigo")
                             elif mc == True and mec == True:
                                 jugarpvsp()
                                 cc = False
@@ -522,10 +617,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 5:
-                            print('Mazo aliado creado')
+                            archivoa = ET.parse("myBaraja.xml")
+                            mazoLocal = crearMazo("defend", archivoa.getroot())
+                            print(mazoLocal)
                             mc = True
                             if mc == True and mec == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo aliado creado")
+                                print("Falta crear el mazo enemigo")
                             elif mc == True and mec == True:
                                 jugarpvsp()
                                 cc = False
@@ -534,10 +632,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 6:
-                            print('Mazo aliado creado')
+                            archivoa = ET.parse("myBaraja.xml")
+                            mazoLocal = crearMazo("balanced", archivoa.getroot())
+                            print(mazoLocal)
                             mc = True
                             if mc == True and mec == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo aliado creado")
+                                print("Falta crear el mazo enemigo")
                             elif mc == True and mec == True:
                                 jugarpvsp()
                                 cc = False
@@ -546,10 +647,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 7:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoEnemigo = crearMazo("random", archivoa.getroot())
+                            print(mazoEnemigo)
                             mec = True
                             if mec == True and mc == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo enemigo creado")
+                                print("Falta crear el mazo aliado")
                             elif mec == True and mc == True:
                                 jugarpvsp()
                                 cc = False
@@ -558,10 +662,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 8:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoEnemigo = crearMazo("attack", archivoa.getroot())
+                            print(mazoEnemigo)
                             mec = True
                             if mec == True and mc == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo enemigo creado")
+                                print("Falta crear el mazo aliado")
                             elif mec == True and mc == True:
                                 jugarpvsp()
                                 cc = False
@@ -570,10 +677,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 9:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoEnemigo = crearMazo("defend", archivoa.getroot())
+                            print(mazoEnemigo)
                             mec = True
                             if mec == True and mc == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo enemigo creado")
+                                print("Falta crear el mazo aliado")
                             elif mec == True and mc == True:
                                 jugarpvsp()
                                 cc = False
@@ -582,10 +692,13 @@ def menu():
                                 mc = False
                                 break
                         elif opcion == 10:
-                            print('Mazo enemigo creado')
+                            archivoa = ET.parse("Enemigo.xml")
+                            mazoEnemigo = crearMazo("balanced", archivoa.getroot())
+                            print(mazoEnemigo)
                             mec = True
                             if mec == True and mc == False:
-                                print('Falta crear el mazo aliado')
+                                print("Mazo enemigo creado")
+                                print("Falta crear el mazo aliado")
                             elif mec == True and mc == True:
                                 jugarpvsp()
                                 cc = False

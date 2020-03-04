@@ -1,49 +1,29 @@
 import xml.etree.ElementTree as ET
+##cargamos el cml con las cartas
+def c(alioene):
+    if alioene == "aliado":
+        try:
+            archivoa = ET.parse("myBaraja.xml")
+            return archivoa
+        except FileNotFoundError:
+            print("No se ha podido leer el fichero")
+    else:
+        try:
+            archivoe = ET.parse("Enemigo.xml")
+            return archivoe
+        except FileNotFoundError:
+            print("No se ha podido leer el fichero")
 ##menu mazos creados (jvsb)
 def jugar():
     while True:
         menujvsb()
         comp()
         if opcion == 1:
-            alioene="aliado"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    global cc
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    global cec
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
+            c("aliado")
+            print("Cartas Cargadas")
         elif opcion == 2:
-            alioene = "enemigo"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    global cc
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    global cec
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
+            c("enemigo")
+            print("Cartas enemigas cargadas")
         elif opcion == 3:
             print("mazo creado")
         elif opcion == 4:
@@ -66,8 +46,6 @@ def jugar():
         elif opcion == 12:
             print("Pratida terminada")
             break
-        elif opcion ==0:
-            break
         else:
             print("Opcion Incorrecta")
 ##Menu mazos creado (jvsj)
@@ -76,45 +54,11 @@ def jugarpvsp():
         menujvsj()
         comp()
         if opcion == 1:
-            alioene = "enemigo"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    global cc
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    global cec
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
+            c("aliado")
+            print("Cartas Cargadas")
         elif opcion == 2:
-            alioene = "aliado"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    global cc
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    global cec
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
+            c("enemigo")
+            print("Cartas enemigas cargadas")
         elif opcion == 3:
             print("mazo creado")
         elif opcion == 4:
@@ -139,8 +83,6 @@ def jugarpvsp():
             break
         elif opcion ==13:
             print("Pratida terminada")
-            break
-        elif opcion ==0:
             break
         else:
             print("Opcion Incorrecta")
@@ -222,68 +164,22 @@ def menu():
         comp()
         ##cargamos cartas aliadas y ponemos "cc" en True(Cargar cartas aliadas)
         if opcion == 1:
-            ##ponemos la variable "alioene" en aliado para cargar el mazo aliado
-            alioene = "aliado"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
+            c("aliado")
+            print("cartas cargadas")
+            cc=True
             ##comprovamos que "cc" este en True (cargar cartas aliadas) y mostramos la siguiente parte del menu
             if cc==True and cec ==False:
                 while True:
                     menucc()
                     comp()
                     if opcion==1:
-                        alioene = "aliado"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-
-                    ##Cargamos las cartas enemigas, ponemos "cec" en True(cargar enemigas cargadas) y hacemos un break para mostrar el siguiente menu[linea 304]
+                        c("aliado")
+                        print("Cartas Cargadas")
+                    ##Cargamos las cartas enemigas, ponemos "cec" en True(cargar enemigas cargadas) y hacemos un break para mostrar el siguiente menu
                     elif opcion == 2:
-                        ##ponemos la variable "alioene" en enemigo para cargar el mazo enemigo
-                        alioene = "enemigo"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
+                        c("enemigo")
+                        print("Cartas enemigas cargadas")
+                        cec=True
                         break
                     ##Creamos el mazo aliado y ponemos "mc" en true
                     elif opcion==3:
@@ -411,43 +307,11 @@ def menu():
                     menucc()
                     comp()
                     if opcion == 1:
-                        alioene = "aliado"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-
+                        c("aliado")
+                        print("Cartas Cargadas")
                     elif opcion == 2:
-                        alioene = "enemigo"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                global cec
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
+                        c("enemigo")
+                        print("Cartas enemigas cargadas")
                     elif opcion == 3:
                         print("mazo creado")
                         mc = True
@@ -546,69 +410,22 @@ def menu():
                             break
             elif cc==False and cec==True:
                 print("Falta crear el mazo aliado")
-        ##ponemos la "cec" en True (cartas enemigas cargadas), pero en este caso solo mostramos para crear los mazos enemigos
         elif opcion == 2:
-            alioene = "enemigo"
-            if alioene == "aliado":
-                try:
-                    archivoa = ET.parse("myBaraja.xml")
-                    print("Cartas Cargadas")
-                    cc = True
-                    return archivoa
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-            else:
-                try:
-                    archivoe = ET.parse("Enemigo.xml")
-                    print("Cartas Enemigas Cargadas")
-                    cec = True
-                    return archivoe
-                except FileNotFoundError:
-                    print("No se ha podido leer el fichero")
-
+            c("enemigo")
+            print('Cartas enemigas cargadas')
+            cec= True
             if cec == True and cc == False:
                 while True:
                     menucec()
                     comp()
-                    ##una vez haya elegido esta opcion ponemos "cc" en true y hacemos break[linea 491]
                     if opcion == 1:
-                        alioene = "aliado"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
+                        c("aliado")
+                        print('Cartas aliadas cargadas')
+                        cc = True
                         break
                     elif opcion == 2:
-                        alioene = "enemigo"
-                        if alioene == "aliado":
-                            try:
-                                archivoa = ET.parse("myBaraja.xml")
-                                print("Cartas Cargadas")
-                                global cc
-                                cc = True
-                                return archivoa
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
-                        else:
-                            try:
-                                archivoe = ET.parse("Enemigo.xml")
-                                print("Cartas Enemigas Cargadas")
-                                cec = True
-                                return archivoe
-                            except FileNotFoundError:
-                                print("No se ha podido leer el fichero")
+                        c("enemigo")
+                        print('Cartas enemigas cargadas')
                     elif opcion == 3:
                         print('Mazo enemigo creado')
                         mec = True
@@ -669,48 +486,17 @@ def menu():
                                 mc = False
                                 mec = False
                                 break
-                ##Una vez hecho el break comprovamos que tenemos los 2 mazos cargados correctamente y mostramos todas las opciones
+
                 if cc == True and cec == True:
                     while True:
                         menucc()
                         comp()
                         if opcion == 1:
-                            alioene = "aliado"
-                            if alioene == "aliado":
-                                try:
-                                    archivoa = ET.parse("myBaraja.xml")
-                                    print("Cartas Cargadas")
-                                    global cc
-                                    cc = True
-                                    return archivoa
-                                except FileNotFoundError:
-                                    print("No se ha podido leer el fichero")
-                            else:
-                                try:
-                                    archivoe = ET.parse("Enemigo.xml")
-                                    print("Cartas Enemigas Cargadas")
-                                    cec = True
-                                    return archivoe
-                                except FileNotFoundError:
-                                    print("No se ha podido leer el fichero")
+                            c("aliado")
+                            print('Cartas aliadas cargadas')
                         elif opcion == 2:
-                            alioene = "enemigo"
-                            if alioene == "aliado":
-                                try:
-                                    archivoa = ET.parse("myBaraja.xml")
-                                    print("Cartas Cargadas")
-                                    cc = True
-                                    return archivoa
-                                except FileNotFoundError:
-                                    print("No se ha podido leer el fichero")
-                            else:
-                                try:
-                                    archivoe = ET.parse("Enemigo.xml")
-                                    print("Cartas Enemigas Cargadas")
-                                    cec = True
-                                    return archivoe
-                                except FileNotFoundError:
-                                    print("No se ha podido leer el fichero")
+                            c("enemigo")
+                            print('Cartas enemigas cargadas')
                         elif opcion == 3:
                             print('Mazo aliado creado')
                             mc = True

@@ -34,15 +34,15 @@ def crearMazo(tipo, archivo):
                     dic[card[0]][child2.tag] = child2.text
 
     elif tipo is 'defend':
-        # Creamos las variables attack y card. <Attack> obtendra el numero de carta y su ataque, y se almacenara alli.
+        # Creamos las variables defend y card. <Defend> obtendra el numero de carta y su defensa, y se almacenara alli.
         defend = []
         card = 1
         for i in archivo.findall('deck/card//defense'):
             defend.append([card, i.text])
             card += 1
 
-        # Ordenamos las cartas escogiendo los valores de ataque y despues eliminaremos las que no sean las 10
-        # primeras. Lo que haremos con esto es obtener el top 10 de las cartas que tienen mas ataque.
+        # Ordenamos las cartas escogiendo los valores de defensa y despues eliminaremos las que no sean las 10
+        # primeras. Lo que haremos con esto es obtener el top 10 de las cartas que tienen mas defensa.
         defend.sort(key=lambda defend: defend[:][1], reverse=True)
         del defend[10:]
 

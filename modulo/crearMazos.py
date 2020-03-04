@@ -1,5 +1,4 @@
 def crearMazo(tipo, archivo):
-    import random, xml.etree.ElementTree as ET
     types = ['attack', 'defend', 'random', 'balanced']
     # Mostramos un error si el atributo <tipo> no es el deseado con la lista creada en la anterior linea.
     assert tipo in types, 'El atributo insertado no es el correcto.'
@@ -84,17 +83,29 @@ def crearMazo(tipo, archivo):
 
     # BALANCED
     elif tipo is types[3]:
-        '''# Creamos las variables attack y card. <Attack> obtendra el numero de carta y su ataque, y se almacenara alli.
+        # Creamos las variables balanced y card. <Balanced> obtendra el numero de carta y su balanced, y se almacenara alli.
         balanced = []
         card = 1
+        attacked = ''
+        defensed = ''
         for i in archivo.findall('deck/card//'):
-            balanced = archivo.findall('deck/card[' + str(card) + ']/defense') - archivo.findall('deck/card[' + str(card) + ']/attack')
-            balanced.append([card, balanced])
-            card += 1'''
+            if i.tag == 'attack':
+                attacked = int(i.text)
+            elif i.tag == 'defense':
+                defensed = int(i.text)
+            elif attacked != '' and defensed != '':
+                # Evitamos que salga negativo los valores
+                if attacked - defensed <= -1:
+                    balanced.append([card, defensed - attacked])
+                else:
+                    balanced.append([card, attacked - defensed])
+                attacked = ''
+                defensed = ''
+                card += 1
 
-        '''# Ordenamos las cartas escogiendo los valores de ataque y despues eliminaremos las que no sean las 10
-        # primeras. Lo que haremos con esto es obtener el top 10 de las cartas que tienen mas ataque.
-        balanced.sort(key=lambda defend: defend[:][1], reverse=True)
+        # Ordenamos las cartas escogiendo los valores de balanced y despues eliminaremos las que no sean las 10
+        # primeras. Lo que haremos con esto es obtener el top 10 de las cartas que tienen menos balanced.
+        balanced.sort(key=lambda defend: defend[:][1], reverse=False)
         del balanced[10:]
 
         # Creamos las llaves necesarias en la variable principal para empezar a rellenarlas con el siguiente for que
@@ -105,16 +116,8 @@ def crearMazo(tipo, archivo):
         for card in balanced:
             # Escogemos las cartas en el findall.
             for child in archivo.findall('deck/card[' + str(card[0]) + ']'):
-                # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
+                #    Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    dic[card[0]][child2.tag] = child2.text'''
+                    dic[card[0]][child2.tag] = child2.text
 
-    print(dic)
-
-
-import xml.etree.ElementTree as ET
-
-archivoa = ET.parse('../myBaraja.xml')
-archivoa = archivoa.getroot()
-
-crearMazo('balanced', archivoa)
+    return dic

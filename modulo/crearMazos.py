@@ -8,7 +8,8 @@ def crearMazo(tipo, archivo):
     # diccionario.
     dic = {}
 
-    if tipo is 'attack':
+    # ATAQUE
+    if tipo is types[0]:
         # Creamos las variables attack y card. <Attack> obtendra el numero de carta y su ataque, y se almacenara alli.
         attack = []
         card = 1
@@ -33,7 +34,8 @@ def crearMazo(tipo, archivo):
                 for child2 in child:
                     dic[card[0]][child2.tag] = child2.text
 
-    elif tipo is 'defend':
+    # DEFENSA
+    elif tipo is types[1]:
         # Creamos las variables defend y card. <Defend> obtendra el numero de carta y su defensa, y se almacenara alli.
         defend = []
         card = 1
@@ -58,7 +60,8 @@ def crearMazo(tipo, archivo):
                 for child2 in child:
                     dic[card[0]][child2.tag] = child2.text
 
-    elif tipo is 'random':
+    # RANDOM
+    elif tipo is types[2]:
         cnt3 = 0
         cnt = 1
         while cnt3 < 11:
@@ -78,7 +81,9 @@ def crearMazo(tipo, archivo):
                     cnt += 1
 
             cnt3 += 1
-    elif tipo is 'balanced':
+
+    # BALANCED
+    elif tipo is types[3]:
         '''# Creamos las variables attack y card. <Attack> obtendra el numero de carta y su ataque, y se almacenara alli.
         balanced = []
         card = 1

@@ -12,9 +12,8 @@ def crearMazo(tipo, archivo):
         print(dic)
     elif tipo is 'random':
         print('Random:', archivo)
-        cnt3=0
         cnt=1
-        while cnt3<10:
+        while cnt<=10:
             ran = str(random.randint(1, 21))
             for child in archivo.findall('deck/card/['+ran+']'):
                 trobat=0
@@ -29,7 +28,7 @@ def crearMazo(tipo, archivo):
                     dic[cnt]=d
                     cnt += 1
 
-            cnt3+=1
+
         print(dic)
     elif tipo is 'balanced':
         print('Balanced:', archivo)

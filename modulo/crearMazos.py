@@ -2,7 +2,7 @@ def crearMazo(tipo, archivo):
     types = ['attack', 'defend', 'random', 'balanced']
     # Mostramos un error si el atributo <tipo> no es el deseado con la lista creada en la anterior linea.
     assert tipo in types, 'El atributo insertado no es el correcto.'
-    dic={1: {}, 2: {}, 3: {}, 4: {}, 5: {}, 6: {}, 7: {}, 8: {}, 9: {}, 10: {}}
+    dic = {1: {}, 2: {}, 3: {}, 4: {}, 5: {}, 6: {}, 7: {}, 8: {}, 9: {}, 10: {}}
 
     cnt = 1
     for child in archivo.findall('deck/card/'):
@@ -39,7 +39,7 @@ def crearMazo(tipo, archivo):
         print('Balanced:', archivo)
 
 import xml.etree.ElementTree as ET
-archivoa = ET.parse('./myBaraja.xml')
+archivoa = ET.parse('../myBaraja.xml')
 archivoa = archivoa.getroot()
 
-crearMazo('defend', archivoa)
+crearMazo('attack', archivoa)

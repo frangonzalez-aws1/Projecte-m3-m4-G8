@@ -1,5 +1,4 @@
 def crearMazo(tipo, archivo):
-    import random
     types = ['attack', 'defend', 'random', 'balanced']
     # Mostramos un error si el atributo <tipo> no es el deseado con la lista creada en la anterior linea.
     assert tipo in types, 'El atributo insertado no es el correcto.'
@@ -34,6 +33,11 @@ def crearMazo(tipo, archivo):
                 for child2 in child:
                     dic[card[0]][child2.tag] = child2.text
 
+                # Insertamos los atributos utilizando <>.attrib
+                listAttrib = child.attrib
+                dic[card[0]]['summonPoints'] = listAttrib['summonPoints']
+                dic[card[0]]['type'] = listAttrib['type']
+
     # DEFENSA
     elif tipo is types[1]:
         # Creamos las variables defend y card. <Defend> obtendra el numero de carta y su defensa, y se almacenara alli.
@@ -60,24 +64,39 @@ def crearMazo(tipo, archivo):
                 for child2 in child:
                     dic[card[0]][child2.tag] = child2.text
 
+                # Insertamos los atributos utilizando <>.attrib
+                listAttrib = child.attrib
+                dic[card[0]]['summonPoints'] = listAttrib['summonPoints']
+                dic[card[0]]['type'] = listAttrib['type']
+
     # RANDOM
     elif tipo is types[2]:
-        cnt = 1
-        while cnt < 11:
-            # ERROR: Si en la carta pongo más de 20 cartas solo me contara las 20 y no todas las que ponga.
-            ran = str(random.randint(1, len(archivo.findall('deck/card')) + 1))
-            for child in archivo.findall('deck/card[' + ran + ']'):
-                trobat = 0
-                d = {}
+        import random
+        # Creamos las variables defend y card. <Defend> obtendra el numero de carta y su defensa, y se almacenara alli.
+        randomL = []
+        i = 1
+        while i < 11:
+            x = random.randint(1, len(archivo.findall('deck/card')))
+            if x not in randomL:
+                randomL.append(x)
+                i += 1
+
+        # Creamos las llaves necesarias en la variable principal para empezar a rellenarlas con el siguiente for que
+        # tenemos.
+        for i in randomL:
+            dic[i] = {}
+
+        for card in randomL:
+            # Escogemos las cartas en el findall.
+            for child in archivo.findall('deck/card[' + str(card) + ']'):
+                # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    for i in dic.values():
-                        if child2.text == i['name']:
-                            trobat = 1
-                            break
-                    d[child2.tag] = child2.text
-                if trobat == 0:
-                    dic[cnt] = d
-                    cnt += 1
+                    dic[card][child2.tag] = child2.text
+
+                # Insertamos los atributos utilizando <>.attrib
+                listAttrib = child.attrib
+                dic[card]['summonPoints'] = listAttrib['summonPoints']
+                dic[card]['type'] = listAttrib['type']
 
     # BALANCED
     elif tipo is types[3]:
@@ -114,8 +133,13 @@ def crearMazo(tipo, archivo):
         for card in balanced:
             # Escogemos las cartas en el findall.
             for child in archivo.findall('deck/card[' + str(card[0]) + ']'):
-                #    Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
+                # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
                     dic[card[0]][child2.tag] = child2.text
+
+                # Insertamos los atributos utilizando <>.attrib
+                listAttrib = child.attrib
+                dic[card[0]]['summonPoints'] = listAttrib['summonPoints']
+                dic[card[0]]['type'] = listAttrib['type']
 
     return dic

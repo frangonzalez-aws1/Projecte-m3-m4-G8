@@ -79,7 +79,7 @@
 		<card summonPoints="5" type="infantry">
 			<name>Numba</name>
 			<description>Nadie es mejor que yo...</description>
-			<attack>3</attack>
+			<attack>4</attack>
 			<defense>1</defense>
 		</card>
 		<card summonPoints="4" type="lancer">

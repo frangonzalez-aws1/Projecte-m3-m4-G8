@@ -31,7 +31,12 @@ def crearMazo(tipo, archivo):
             for child in archivo.findall('deck/card[' + str(card[0]) + ']'):
                 # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    dic[card[0]][child2.tag] = child2.text
+                    if child2.tag == 'attack':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    elif child2.tag == 'defense':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    else:
+                        dic[card[0]][child2.tag] = child2.text
 
                 # Insertamos los atributos utilizando <>.attrib
                 listAttrib = child.attrib
@@ -62,7 +67,12 @@ def crearMazo(tipo, archivo):
             for child in archivo.findall('deck/card[' + str(card[0]) + ']'):
                 # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    dic[card[0]][child2.tag] = child2.text
+                    if child2.tag == 'attack':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    elif child2.tag == 'defense':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    else:
+                        dic[card[0]][child2.tag] = child2.text
 
                 # Insertamos los atributos utilizando <>.attrib
                 listAttrib = child.attrib
@@ -72,7 +82,7 @@ def crearMazo(tipo, archivo):
     # RANDOM
     elif tipo is types[2]:
         import random
-        # Creamos las variables defend y card. <Defend> obtendra el numero de carta y su defensa, y se almacenara alli.
+        # Creamos las variables randomL y card. <RandomL> obtendra el numero de carta, y se almacenara alli.
         randomL = []
         i = 1
         while i < 11:
@@ -91,7 +101,12 @@ def crearMazo(tipo, archivo):
             for child in archivo.findall('deck/card[' + str(card) + ']'):
                 # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    dic[card][child2.tag] = child2.text
+                    if child2.tag == 'attack':
+                        dic[card][child2.tag] = int(child2.text)
+                    elif child2.tag == 'defense':
+                        dic[card][child2.tag] = int(child2.text)
+                    else:
+                        dic[card][child2.tag] = child2.text
 
                 # Insertamos los atributos utilizando <>.attrib
                 listAttrib = child.attrib
@@ -122,7 +137,7 @@ def crearMazo(tipo, archivo):
 
         # Ordenamos las cartas escogiendo los valores de balanced y despues eliminaremos las que no sean las 10
         # primeras. Lo que haremos con esto es obtener el top 10 de las cartas que tienen menos balanced.
-        balanced.sort(key=lambda defend: defend[:][1], reverse=False)
+        balanced.sort(key=lambda balanced: balanced[:][1], reverse=False)
         del balanced[10:]
 
         # Creamos las llaves necesarias en la variable principal para empezar a rellenarlas con el siguiente for que
@@ -135,7 +150,12 @@ def crearMazo(tipo, archivo):
             for child in archivo.findall('deck/card[' + str(card[0]) + ']'):
                 # Ahora escogemos todos los hijos de la carta y las anadimos en el diccionario.
                 for child2 in child:
-                    dic[card[0]][child2.tag] = child2.text
+                    if child2.tag == 'attack':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    elif child2.tag == 'defense':
+                        dic[card[0]][child2.tag] = int(child2.text)
+                    else:
+                        dic[card[0]][child2.tag] = child2.text
 
                 # Insertamos los atributos utilizando <>.attrib
                 listAttrib = child.attrib

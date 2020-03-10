@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 from modulo.crearMazos import crearMazo
-##cargamos el cml con las cartas
+##cargamos el xml con las cartas
 def c(alioene):
     if alioene == "aliado":
         try:

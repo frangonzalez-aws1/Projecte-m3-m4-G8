@@ -68,7 +68,7 @@
 			<name>Perofora</name>
 			<description>Indeseable bestia...</description>
 			<attack>2</attack>
-			<defense>5</defense>
+			<defense>3</defense>
 		</card>
 		<card summonPoints="5" type="chivalry">
 			<name>Estabie</name>

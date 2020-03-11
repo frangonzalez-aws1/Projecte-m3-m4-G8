@@ -197,7 +197,7 @@ def menujvsj():
           "0.Salir")
 def menu():
     ##cartas aliadas cargadas
-    cc=False
+    cc=""
     ##cartas enemigas cargadas
     cec=False
     ##mazo aliado creado

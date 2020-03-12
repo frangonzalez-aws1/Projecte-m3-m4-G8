@@ -1,6 +1,6 @@
 from modulo.crearMazos import crearMazo
 from funciones import cargarcartas
-from fases import fasepegar
+from fases import fasepegarvspersona, fasepegar
 import random
 def menu():
     dic={0:".Salir",
@@ -21,6 +21,7 @@ def menu():
     fene=False
     mazoAli=False
     mazoEne=False
+    puntos=0
     while True:
         try:
             if fali==False and fene==False:
@@ -92,13 +93,21 @@ def menu():
                 mazoEne = True
             elif opcion==11 and mazoAli==True and mazoEne==True:
                 atp=random.randint(1,2)
-                fasepegar(Mali, Mene, atp)
+                fasepegarvspersona(Mali, Mene, atp)
             elif opcion==12 and mazoAli==True:
                 atp = random.randint(1, 2)
                 fasepegar(Mali, Mene, atp)
-            elif opcion==13 and mazoEne==True:
+            elif opcion==13 and mazoAli==True:
                 atp = random.randint(1, 2)
-                fasepegar(Mali, Mene, atp)
+                a=fasepegar(Mali, Mene, atp)
+                if a==True:
+                    puntos+=20
+                    print('Has ganado')
+                    print("Puntos Actuales-->", puntos)
+                elif a==False:
+                    puntos -= 10
+                    print("Has perdido")
+                    print("Puntos Actuales-->", puntos)
             elif opcion==0:
                 print("\nHasta luego\n")
                 print(Mali)

@@ -1,7 +1,7 @@
-from avqs2 import crearMazo
-def menu(opcion, mazoEne, mazoAli, aene):
-
-    dic={1:".Cargar Cartas",
+from modulo.crearMazos import crearMazo
+def menu():
+    dic={0:".Salir",
+        1:".Cargar Cartas",
         2:".Cargar cartas enemigo",
         3:".Crear mazo aleatorio",
         4:".Crear mazo ofensivo",
@@ -13,62 +13,74 @@ def menu(opcion, mazoEne, mazoAli, aene):
         10:".Crear mazo equilibrado Enemigo",
         11:".Luchar Jugador vs Jugador",
         12:".Luchar Jugador vs Bot (arcade)",
-        13:".Luchar Jugador vs Bot (liga)",
-        14:".Salir"}
-
-    while opcion !=14:
+        13:".Luchar Jugador vs Bot (liga)"}
+    fali=False
+    fene=False
+    mazoAli=False
+    mazoEne=False
+    while True:
         try:
-            for i in range (1, len(dic)+1):
-                if i ==1 or i ==2 or i ==14:
-                    print(str(i)+dic[i])
+            if fali==False and fene==False:
+                for i in range(0,len(dic)):
+                    if i <3:
+                        print(str(i)+dic[i])
+
+            if fali==True and fene==False:
+                for i in range(0,len(dic)):
+                    if i <7:
+                        print(str(i)+dic[i])
+                if mazoAli == True and mazoEne == False:
+                    for i in range(0, len(dic)):
+                        if i>10 and i!=11:
+                            print(str(i) + dic[i])
+            if fali==False and fene==True:
+                for i in range(0,len(dic)):
+                    if i<3 or i>6 and i<11:
+                        print(str(i)+dic[i])
+            if fali==True and fene==True:
+                for i in range(0,len(dic)):
+                    if i<11 or i ==14:
+                        print(str(i)+dic[i])
+                if mazoAli==True and mazoEne==False:
+                    for i in range(0, len(dic)):
+                        if i >11 and i<14:
+                            print(str(i) + dic[i])
+                if mazoAli==True and mazoEne==True:
+                    for i in range(0, len(dic)):
+                        if i >= 11 and i<14:
+                            print(str(i) + dic[i])
 
             opcion=int(input("Escoge una opcion"))
-
-            if opcion ==1 or opcion==2:
-                for i in range (1,len(dic)+1):
-                    if i<11 or i>13 :
-                        print(str(i)+dic[i])
-                break
-            if opcion>=3 and opcion<=6:
-                if mazoEne==0:
-                    for i in range(1, len(dic) + 1):
-                        if  i<11 or i>13:
-                            print(str(i) + dic[i])
-                else:
-                    for i in range(1, len(dic) + 1):
-                        if  i!=11:
-                            print(str(i) + dic[i])
-                break
-
-            if opcion >= 7 and opcion <= 10:
-                if mazoAli == 0:
-                    for i in range(1, len(dic) + 1):
-                        if i < 11 or i > 13:
-                            print(str(i) + dic[i])
-                else:
-                    for i in range(1, len(dic) + 1):
-                        if i != 11:
-                            print(str(i) + dic[i])
-                break
-
-            if opcion >= 11 and opcion <= 13:
-                if aene == 1:
-                    for i in range(1, len(dic) + 1):
-                            print(str(i) + dic[i])
-                else:
-                    for i in range(1, len(dic) + 1):
-                        if i != 11:
-                            print(str(i) + dic[i])
-                break
-            if opcion==14:
-                print("\nHa sido un placer")
-
-            if opcion>14:
+            if opcion==1:
+                fali=True
+            elif opcion==2:
+                fene=True
+            elif opcion==3 and fali==True:
+                mazoAli=True
+            elif opcion == 4 and fali==True:
+                mazoAli = True
+            elif opcion==5 and fali==True:
+                mazoAli=True
+            elif opcion==6 and fali==True:
+                mazoAli=True
+            elif opcion==7 and fene==True:
+                mazoEne=True
+            elif opcion==8 and fene==True:
+                mazoEne=True
+            elif opcion==9 and fene==True:
+                mazoEne=True
+            elif opcion==10 and fene==True:
+                mazoEne=True
+            elif opcion==11 and mazoAli==True and mazoEne==True:
+                pass
+            elif opcion==12 and mazoAli==True:
+                pass
+            elif opcion==13 and mazoEne==True:
+                pass
+            elif opcion==0:
+                print("\nHasta luego\n")
+            else:
                 print("\nOpcion no valida\n")
         except ValueError:
             print("\nOpcion no valida\n")
-opcion=3
-mazoEne=1
-mazoAli=0
-aene=0
-menu(opcion, mazoEne, mazoAli, aene)
+menu()

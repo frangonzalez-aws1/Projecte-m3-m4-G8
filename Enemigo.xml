@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PlayerConfig SYSTEM "ieti_card_game.dtd">
+<PlayerConfig>
+	<playerLife>10</playerLife>
+	<summonPointsPlayer>5</summonPointsPlayer>
+	<deck>
+		<card summonPoints="3" type='infantry'>
+			<name>Joseph Joestar</name>
+			<description>Aventurero intrepido. No huye, son retiradas estrategicas.</description>
+			<attack>1</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='5' type='lancer'>
+			<name>Jotaro Kujo</name>
+			<description>El y su traje han superado nombrosas aventuras.</description>
+			<attack>3</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='4' type='infantry'>
+			<name>Noriaki Kakyoin</name>
+			<description>Llega a ser incomodo estar con el cuando come cerezas.</description>
+			<attack>2</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='4' type='lancer'>
+			<name>Muhammad Avdol</name>
+			<description>El adivino y gran amigo de Polnareff. Es muy inteligente.</description>
+			<attack>4</attack>
+			<defense>0</defense>
+		</card>
+		<card summonPoints='5' type='chivalry'>
+			<name>Jean Pierre Polnaref</name>
+			<description>Si tienes un enemigo, seguro que lo encuentra antes que tu.</description>
+			<attack>3</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='2' type='infantry'>
+			<name>Soldado Ryan</name>
+			<description>Soldado raso de gran valor y fortaleza interior.</description>
+			<attack>1</attack>
+			<defense>1</defense>
+		</card>
+		<card summonPoints='5' type='infantry'>
+			<name>Glass Cannon</name>
+			<description>Artilugio de combate; gran potencia de ataque pero fragil.</description>
+			<attack>5</attack>
+			<defense>0</defense>
+		</card>
+		<card summonPoints='3' type='lancer'>
+			<name>Escanor</name>
+			<description>Caballero del reino, receibe su poder sobrehumano del sol.</description>
+			<attack>2</attack>
+			<defense>1</defense>
+		</card>
+		<card summonPoints='4' type='chivalry'>
+			<name>Lucky Luck</name>
+			<description>¡Mas rapido que su sombra!</description>
+			<attack>3</attack>
+			<defense>1</defense>
+		</card>
+		<card summonPoints='4' type='chivalry'>
+			<name>Marrano real</name>
+			<description>Cerdo bendecido por Dios, entregado plenamente a su reino.</description>
+			<attack>1</attack>
+			<defense>3</defense>
+		</card>
+		<card summonPoints='3' type='lancer'>
+			<name>Duende del oro</name>
+			<description>Duende que vive solo para llenar su saco de monedas de oro.</description>
+			<attack>2</attack>
+			<defense>1</defense>
+		</card>
+		<card summonPoints='4' type='infantry'>
+			<name>Anton el Grandullon</name>
+			<description>Un noble gigante muy humilde con ganas de aplastar cosas.</description>
+			<attack>2</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='1' type='lancer'>
+			<name>Ainara</name>
+			<description>La arquera magica del reino de la fantasia.</description>
+			<attack>1</attack>
+			<defense>0</defense>
+		</card>
+		<card summonPoints='3' type='chivalry'>
+			<name>Julien</name>
+			<description>Principe de Madagascar. Amor incondicional a las hormigas.</description>
+			<attack>1</attack>
+			<defense>2</defense>
+		</card>
+		<card summonPoints='5' type='infantry'>
+			<name>Javier</name>
+			<description>Troll defensor de los bosques del cuento de Pulgarcito.</description>
+			<attack>1</attack>
+			<defense>4</defense>
+		</card>
+		<card summonPoints='4' type='lancer'>
+            <name>Saber</name>
+            <description>Es la heroína conocida como el Rey de los Caballeros</description>
+            <attack>3</attack>
+            <defense>1</defense>
+        </card>
+        <card summonPoints='5' type='lancer'>
+            <name>Archer</name>
+            <description>Su título se refiere a su habilidad con armas a distancia</description>
+            <attack>1</attack>
+            <defense>4</defense>
+        </card>
+        <card summonPoints='5' type='infantry'>
+            <name>Gilgamesh</name>
+            <description>El gran rey mitad-dios  mitad-humano</description>
+            <attack>4</attack>
+            <defense>1</defense>
+        </card>
+        <card summonPoints='5' type='chivalry'>
+            <name>Berserker</name>
+            <description>El héroe más grande de la mitología griega</description>
+            <attack>0</attack>
+            <defense>5</defense>
+        </card>
+        <card summonPoints='3' type='infantry'>
+            <name>Caster</name>
+            <description>Princesa que fue etiquetada como bruja en la mitología</description>
+            <attack>3</attack>
+            <defense>0</defense>
+        </card>
+	</deck>
+</PlayerConfig>

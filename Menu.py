@@ -2,6 +2,7 @@
 from modulo.crearMazos import crearMazo
 from funciones import cargarcartas
 from fases import fasepegarvspersona, fasepegar
+from liga import laliga
 ##Imoportamos el random
 import random
 def menu():
@@ -26,6 +27,7 @@ def menu():
     ##Creamos las variable 'mazoAli' y 'mazoEne' para saber si se han creado los mazos correctamente
     mazoAli=False
     mazoEne=False
+    Mali=""
     ##Creamos la variable 'puntos' para saber los puntos totales que tenemos en 'liga'
     puntos=0
     while True:
@@ -101,7 +103,7 @@ def menu():
                 mazoAli=True
                 ##En caso de que no tengamos el mazo enemigo creado, lo creamos para poder jugar contra el 'bot'
                 if mazoEne == False:
-                    Mene= ('balanced', aliado)
+                    Mene= crearMazo('balanced', aliado)
             ##Creamos el mazo enemigo y ponemos 'mazoEne' en 'True'
             elif opcion==7 and fene==True:
                 Mene = crearMazo('random', enemigo)
@@ -140,20 +142,7 @@ def menu():
                 fasepegar(Mali, Mene, atp)
             ##Empezamos la partida jugador contra bot (liga)
             elif opcion==13 and mazoAli==True:
-                ##Hacemos la seleccion de quien empieza primero
-                atp = random.randint(1, 2)
-                ##Llamamos a la funcion introduciendo los valores necesarios
-                a=fasepegar(Mali, Mene, atp)
-                ##Si ha ganado el mazo aliado sumamos 20 puntos a los puntos de liga
-                if a==True:
-                    puntos+=20
-                    print('Has ganado')
-                    print("Puntos Actuales-->", puntos)
-                ##Si ha ganado el mazo aliado restamos 10 puntos a los puntos de liga
-                elif a==False:
-                    puntos -= 10
-                    print("Has perdido")
-                    print("Puntos Actuales-->", puntos)
+                laliga(aliado)
             ##Salimos del programa
             elif opcion==0:
                 print("\nHasta luego\n")

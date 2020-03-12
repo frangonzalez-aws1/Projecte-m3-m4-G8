@@ -20,15 +20,19 @@ def faseinv(dic, dic2):
 
     lista=[]
     while jugadores['enemigo']['pinv']>0 and len(lista)<20:
-            try:
-                ran=random.randint(1,20)
-                if ran not in lista:
-                    lista.append(ran)
-                    if dic2[ran]['summonPoints']<=jugadores['enemigo']['pinv']:
-                            jugadores['enemigo']['pinv']-=dic2[ran]['summonPoints']
-                            invEne.append(dic2[ran])
-            except KeyError:
-                pass
+        try:
+            ##Cogemos un numero aleatorio
+            ran = random.randint(1, 20)
+            ##Si ese numero aleatorio no esta en la lista lo añadimos
+            if ran not in lista:
+                lista.append(ran)
+                ##Si los puntos de invocacion de esa carta son menores que los
+                ##puntos de invocacion del jugador, invocamos la carta
+                if dic2[ran]['summonPoints'] <= jugadores['enemigo']['pinv']:
+                    jugadores['enemigo']['pinv'] -= dic2[int(ran)]['summonPoints']
+                    invEne.append(dic2[ran])
+        except KeyError:
+            pass
     jugadores['local']['pinv']=5
     jugadores['enemigo']['pinv']=5
     return invAli, invEne
@@ -248,10 +252,7 @@ def fasepegar(mazoAli,mazoEne,atp):
                         jugadores['enemigo']['vida'] -= invAli[x]['attack']
                     cnt2 = 0
                     cnt = 0
-            if atp == 1:
-                atp = 2
-            elif atp == 2:
-                atp = 1
+            atp=2
             if atp==2:
                 try:
                     for i in range (0,len(invEne)):
@@ -281,40 +282,37 @@ def fasepegar(mazoAli,mazoEne,atp):
                             jugadores['local']['vida'] -= invEne[x]['attack']
                     cnt2 = 0
                     cnt = 0
-        if atp ==1:
-            atp=2
-        elif atp==2:
-            atp=1
+        atp=1
         cnt2+=1
         cnt+=1
         if jugadores['local']['vida']>0 and jugadores['enemigo']['vida']<=0:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
-            print("Pratida finalizada, ha ganado el jugador 1 (aliado)")
+            print("Partida finalizada, ha ganado el jugador 1 (aliado)")
             input("Pulse enter para continuar")
             return True
         elif jugadores['local']['vida']<=0 and jugadores['enemigo']['vida']>0:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
-            print("Pratida finalizada, ha ganado el jugador 2 (enemigo)")
+            print("Partida finalizada, ha ganado el jugador 2 (enemigo)")
             input("Pulse enter para continuar")
             return False
         elif cnt==3 and jugadores['local']['vida']>jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
-            print("Pratida finalizada, ha ganado el jugador 1 (aliado)")
+            print("Partida finalizada, ha ganado el jugador 1 (aliado)")
             input("Pulse enter para continuar")
             return True
         elif cnt==3 and jugadores['local']['vida']<jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
-            print("Pratida finalizada, ha ganado el jugador 2 (enemigo)")
+            print("Partida finalizada, ha ganado el jugador 2 (enemigo)")
             input("Pulse enter para continuar")
             print()
             return False
         elif cnt==3 and jugadores['local']['vida']==jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
-            print("Pratida finalizada, ha quedado en un empate")
+            print("Partida finalizada, ha quedado en un empate")
             input("Pulse enter para continuar")
             return False

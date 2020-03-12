@@ -26,27 +26,19 @@ def faseinv(dic, dic2):
     jugadores['local']['pinv']=5
     jugadores['enemigo']['pinv']=5
     return invAli, invEne
-from modulo.crearMazos import crearMazo
-import xml.etree.ElementTree as ET
-archivoa = ET.parse('./myBaraja.xml')
-archivoa = archivoa.getroot()
-mazoAli=crearMazo('random', archivoa)
-mazoEnemigo=crearMazo('defend', archivoa)
-atp=random.randint(1,2)
-
-jugadores={'local':{'vida':10, 'pinv':5,}, 'enemigo':{'vida':10,'pinv':5}}
-def fasepegar(atp):
-    global invAli, invEne
+def fasepegar(mazoAli,mazoEne,atp):
+    global invAli, invEne, jugadores
+    jugadores = {'local': {'vida': 10, 'pinv': 5, }, 'enemigo': {'vida': 10, 'pinv': 5}}
     invAli = []
     invEne = []
     cnt=0
     cnt2=0
-    print("quien comienza",atp)
+    print("Comienza el jugador",atp)
     while jugadores['local']['vida']>0 and jugadores['enemigo']['vida']>0 and cnt<3:
         if len(invAli)==0 or len(invEne)==0 or cnt2==2:
             invEne=[]
             invAli=[]
-            faseinv(mazoAli, mazoEnemigo)
+            faseinv(mazoAli, mazoEne)
             print("ali", invAli)
             print("ene", invEne)
             if atp==1:
@@ -113,8 +105,5 @@ def fasepegar(atp):
                     cnt = 0
         cnt2+=1
         cnt+=1
-        print('aliado2', jugadores['local']['vida'])
-        print('enemigo2', jugadores['enemigo']['vida'])
-fasepegar(atp)
-print("ene",invEne)
-print("ali",invAli)
+        print('El jugador 1(aliado)tiene', jugadores['local']['vida'],"puntos de vida")
+        print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'],"puntos de vida")

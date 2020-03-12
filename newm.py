@@ -1,4 +1,7 @@
 from modulo.crearMazos import crearMazo
+from funciones import cargarcartas
+from fases import fasepegar
+import random
 def menu():
     dic={0:".Salir",
         1:".Cargar Cartas",
@@ -52,33 +55,55 @@ def menu():
 
             opcion=int(input("Escoge una opcion"))
             if opcion==1:
-                fali=True
+                aliado, fali=cargarcartas('aliado')
             elif opcion==2:
-                fene=True
+                enemigo, fene=cargarcartas('enemigo')
             elif opcion==3 and fali==True:
-                mazoAli=True
-            elif opcion == 4 and fali==True:
+                Mali=crearMazo('random', aliado)
                 mazoAli = True
+                if mazoEne==False:
+                    Mene=crearMazo('random', aliado)
+            elif opcion == 4 and fali==True:
+                Mali= crearMazo('attack', aliado)
+                mazoAli = True
+                if mazoEne == False:
+                    Mene = crearMazo('attack', aliado)
             elif opcion==5 and fali==True:
-                mazoAli=True
+                Mali= crearMazo('defend', aliado)
+                mazoAli = True
+                if mazoEne == False:
+                    Mene = crearMazo('defend', aliado)
             elif opcion==6 and fali==True:
+                Mali= crearMazo('balanced', aliado)
                 mazoAli=True
+                if mazoEne == False:
+                    Mene= ('balanced', aliado)
             elif opcion==7 and fene==True:
-                mazoEne=True
+                Mene = crearMazo('random', enemigo)
+                mazoEne = True
             elif opcion==8 and fene==True:
-                mazoEne=True
+                Mene= crearMazo('attack', enemigo)
+                mazoEne = True
             elif opcion==9 and fene==True:
-                mazoEne=True
+                Mene = crearMazo('defend', enemigo)
+                mazoEne = True
             elif opcion==10 and fene==True:
-                mazoEne=True
+                Mene= crearMazo('balanced', enemigo)
+                mazoEne = True
             elif opcion==11 and mazoAli==True and mazoEne==True:
-                pass
+                atp=random.randint(1,2)
+                fasepegar(Mali, Mene, atp)
             elif opcion==12 and mazoAli==True:
-                pass
+                atp = random.randint(1, 2)
+                fasepegar(Mali, Mene, atp)
             elif opcion==13 and mazoEne==True:
-                pass
+                atp = random.randint(1, 2)
+                fasepegar(Mali, Mene, atp)
             elif opcion==0:
                 print("\nHasta luego\n")
+                print(Mali)
+                print(Mene)
+                break
             else:
                 print("\nOpcion no valida\n")
         except ValueError:

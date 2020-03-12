@@ -3,16 +3,18 @@ def cargarcartas(alioene):
     if alioene == "aliado":
         try:
             archivoa = ET.parse("myBaraja.xml")
-            print("Se ha cargado correctamente el archivo aliado")
-            return archivoa
+            archivoa=archivoa.getroot()
+            print("\nSe ha cargado correctamente el archivo aliado\n")
+            return archivoa, True
         except FileNotFoundError:
-            print("No se ha podido leer el fichero")
-            return False
+            print("\nNo se ha podido leer el fichero\n")
+            return False, False
     else:
         try:
             archivoe = ET.parse("Enemigo.xml")
-            print("Se ha cargado correctamente el archivo enemigo")
-            return archivoe
+            archivoe = archivoe.getroot()
+            print("\nSe ha cargado correctamente el archivo enemigo\n")
+            return archivoe, True
         except FileNotFoundError:
-            print("No se ha podido leer el fichero")
-            return False
+            print("\nNo se ha podido leer el fichero\n")
+            return False, False

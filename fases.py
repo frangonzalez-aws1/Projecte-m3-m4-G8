@@ -253,30 +253,30 @@ def fasepegar(mazoAli,mazoEne,atp):
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
             print("Pratida finalizada, ha ganado el jugador 1 (aliado)")
-            input("Pulse enter para continuar\n")
+            input("Pulse enter para continuar")
             return True
         elif jugadores['local']['vida']<=0 and jugadores['enemigo']['vida']>0:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
             print("Pratida finalizada, ha ganado el jugador 2 (enemigo)")
-            input("Pulse enter para continuar\n")
+            input("Pulse enter para continuar")
             return False
         elif cnt==3 and jugadores['local']['vida']>jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
             print("Pratida finalizada, ha ganado el jugador 1 (aliado)")
-            input("Pulse enter para continuar\n")
+            input("Pulse enter para continuar")
             return True
         elif cnt==3 and jugadores['local']['vida']<jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
             print("Pratida finalizada, ha ganado el jugador 2 (enemigo)")
-            input("Pulse enter para continuar\n")
+            input("Pulse enter para continuar")
             print()
             return False
         elif cnt==3 and jugadores['local']['vida']==jugadores['enemigo']['vida']:
             print('El jugador 1(aliado)tiene', jugadores['local']['vida'], "puntos de vida")
             print('El jugador 2(enemigo)tiene', jugadores['enemigo']['vida'], "puntos de vida")
             print("Pratida finalizada, ha quedado en un empate")
-            input("Pulse enter para continuar\n")
+            input("Pulse enter para continuar")
             return False
